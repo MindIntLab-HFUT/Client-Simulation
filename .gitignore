@@ -1,0 +1,69 @@
+## LaTeX source and template files
+README.txt
+*.tex
+*.bib
+*.cls
+*.bst
+*.bbx
+*.cbx
+*.dbx
+
+## LaTeX build artifacts
+*.acn
+*.acr
+*.alg
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.pdf
+*.ps
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+## BibLaTeX / Biber
+*-blx.bib
+*.brf
+
+## Glossaries / nomenclature
+*.loa
+*.lol
+*.nlo
+*.nls
+*.nlg
+
+## minted / pythontex
+_minted*/
+*.pyg
+*.pytxcode
+pythontex-files-*/
+
+## latexmk
+*.bak
+*.sav
+*.tmp
+
+## Editors
+*.swp
+*~
