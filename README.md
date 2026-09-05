@@ -1,330 +1,228 @@
 # A Survey of Client Simulation in Healthcare and Beyond
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Paper](https://img.shields.io/badge/Paper-coming%20soon-blue)](#) [![Resources](https://img.shields.io/badge/Resources-curated-green)](#)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Paper](https://img.shields.io/badge/Paper-coming%20soon-blue)](#)
 
-You can Watch and Star this repository to follow updates for **A Survey of Client Simulation in Healthcare and Beyond**.
-
-> Client simulation is about controllable, realistic, and domain-grounded interaction partners for training, evaluation, and synthetic data construction.
-
-## Overview
-
-This repository maintains the curated reading list for the paper:
-
-**A Survey of Client Simulation in Healthcare and Beyond**
+Curated resources for **A Survey of Client Simulation in Healthcare and Beyond**.
 
 - Paper: coming soon
 
 ```mermaid
-flowchart LR
-  A[Client Simulation] --> B[Traditional]
-  A --> C[LLM Prompt-based]
-  A --> D[Multi-Agent]
-  A --> E[Multimodal]
-  B --> F[Physical Healthcare]
-  C --> F
-  D --> F
-  E --> F
-  B --> G[Mental Health]
-  C --> G
-  D --> G
-  E --> G
-  B --> H[Beyond Healthcare]
-  C --> H
-  D --> H
-  E --> H
+flowchart TB
+  CS[Client Simulation]
+
+  CS --> MT[Methodological Taxonomy]
+  CS --> AD[Application Domains]
+  CS --> RE[Resources and Evaluation]
+
+  MT --> TR[Traditional-based]
+  MT --> SA[Single-Agent Textual LLM]
+  MT --> MA[Multi-Agent Textual LLM]
+  MT --> MM[Multimodal]
+
+  TR --> TRM[Human SP/SC<br/>Scenario Protocol<br/>Manikin/HFS<br/>Virtual Patient<br/>Rule-based Dialogue]
+  SA --> SAM[Profile/Scenario Conditioning<br/>Principle/State Guidance<br/>Stage/Reasoning Control<br/>Retrieval/Memory Augmentation<br/>Model Adaptation/Alignment]
+  MA --> MAM[State/Persona Modeling<br/>Memory/Reasoning Architecture<br/>Role/Workflow Orchestration<br/>Simulation/Evaluation Environment<br/>Experience-Based Optimization]
+  MM --> MMM[Scripted Multimodal Enactment<br/>Modular Perception-Action Generation<br/>Affect/State-Coupled Behavior<br/>Evidence-Grounded Construction<br/>Unified Cross-Modal Role Modeling]
+
+  AD --> PH[Physical Healthcare]
+  AD --> MH[Mental Health]
+  AD --> BH[Beyond Healthcare]
+
+  RE --> DS[Datasets]
+  RE --> BM[Benchmarks]
+  RE --> EV[Evaluation Protocols and Metrics]
+
+  classDef root fill:#1f4e79,color:#fff,stroke:#163a5c,stroke-width:2px;
+  classDef axis fill:#d9eaf7,stroke:#4f81bd,stroke-width:1.5px;
+  classDef family fill:#eaf3e3,stroke:#70ad47;
+  classDef domain fill:#fff2cc,stroke:#bf9000;
+  classDef resource fill:#f4e1f5,stroke:#a64ca6;
+  class CS root;
+  class MT,AD,RE axis;
+  class TR,SA,MA,MM,TRM,SAM,MAM,MMM family;
+  class PH,MH,BH domain;
+  class DS,BM,EV resource;
 ```
 
-## Citation
+## Scope and verification
 
-Please update the author list and paper URL after publication.
+This index mirrors the active rows in the manuscript's five summary tables. Commented-out table rows and background-only citations are intentionally excluded. Years follow the manuscript tables (which use the publication year for venue papers and the table-assigned year for preprints); links point to DOI records, official proceedings, PubMed, publisher pages, or arXiv. A code link is included only when an author-associated repository could be verified from the paper, its official page, or the repository itself. `—` means that no verified public code repository was found.
 
-```bibtex
-@article{clientsimulation2026survey,
-  title   = {A Survey of Client Simulation in Healthcare and Beyond},
-  journal = {ACM Computing Surveys},
-  year    = {2026},
-  note    = {Manuscript in preparation}
-}
-```
+Last table-to-paper and code-link audit: **2026-09-05**.
 
-## Welcome Contributions
+## Contents
 
-If you find missing papers, datasets, benchmarks, or code repositories, please open an issue or pull request with the title, venue or year, paper link, code link if available, and the most relevant category below.
+- [Traditional-based client simulation](#1-traditional-based-client-simulation)
+- [Single-agent textual LLM simulation](#2-single-agent-textual-llm-simulation)
+- [Multi-agent textual LLM simulation](#3-multi-agent-textual-llm-simulation)
+- [Multimodal client simulation](#4-multimodal-client-simulation)
+- [Datasets, benchmarks, and evaluation protocols](#5-datasets-benchmarks-and-evaluation-protocols)
 
-Last metadata and code verification: **2026-07-10**. Every entry was searched by its full paper title and cross-checked against the publisher page, official proceedings, DOI record, PubMed, arXiv, and GitHub. `Venue / Source` uses standard conference abbreviations or journal titles; entries labeled `arXiv` had no confirmed conference or journal version. Code links are included only when the repository is explicitly associated with the paper by the authors, paper, or official project page.
+## 1. Traditional-based client simulation
 
-## Updates
+| Method | Year | Venue / Source | Category | Focus | Paper | Code |
+|---|---:|---|---|---|---|---|
+| Standardized Patient (SP) | 1968 | CMAJ | Human SP/SC | Clinical interview teaching | [Simulated patients in medical teaching](https://pubmed.ncbi.nlm.nih.gov/5646104/) | — |
+| OSCE Assessment | 1975 | BMJ | Scenario protocol | Clinical competence assessment | [Assessment of clinical competence using objective structured examination.](https://www.bmj.com/content/1/5955/447) | — |
+| OSCE Standard Framework | 1979 | Medical Education | Scenario protocol | OSCE design | [Assessment of clinical competence using an objective structured clinical examination (OSCE).](https://doi.org/10.1111/j.1365-2923.1979.tb00918.x) | — |
+| Harvey Cardiology Simulator | 1980 | American Journal of Cardiology | Manikin/HFS | Cardiology exam training | [“Harvey,” the cardiology patient simulator: Pilot studies on teaching effectiveness](https://doi.org/10.1016/0002-9149%2880%2990123-x) | — |
+| SP Educational Framework | 1993 | Academic Medicine | Human SP/SC | SP pedagogy | [An overview of the uses of standardized patients for teaching and evaluating clinical skills. AAMC](https://doi.org/10.1097/00001888-199306000-00002) | — |
+| OR Crisis Simulation | 1995 | Journal of clinical anesthesia | Manikin/HFS | OR emergency training | [Anesthesia crisis resource management: Real-life simulation training in operating room crises](https://doi.org/10.1016/0952-8180%2895%2900146-8) | — |
+| Trauma Team Simulation | 2002 | Journal of Trauma | Manikin/HFS | Emergency team training | [Evaluation of Trauma Team Performance Using an Advanced Human Patient Simulator for Resuscitation Training](https://doi.org/10.1097/00005373-200206000-00009) | — |
+| Cardiac Arrest Team Simulation | 2008 | Chest | Scenario Protocol | Patient-safety training | [Simulation-Based Education Improves Quality of Care During Cardiac Arrest Team Responses at an Academic Teaching Hospital: A Case-Control Study](https://doi.org/10.1016/s0734-3299%2808%2979117-2) | — |
+| CVC Mastery Learning | 2009 | Critical care medicine | Scenario Protocol | Central-line insertion | [Simulation-based mastery learning reduces complications during central venous catheter insertion in a medical intensive care unit*](https://doi.org/10.1097/ccm.0b013e3181a57bc1) | — |
+| AMEE SP Guide | 2009 | Medical Teacher | Human SP/SC | SP standardization | [The use of simulated patients in medical education: AMEE Guide No 42](https://doi.org/10.1080/01421590903002821) | — |
+| Procedural Skill Training | 2015 | BMC Medical Education | Scenario protocol | Procedural skill learning | [The benefit of repetitive skills training and frequency of expert feedback in the early acquisition of procedural skills](https://doi.org/10.1186/s12909-015-0286-5) | — |
+| Psychotherapy SP Training | 1998 | Academic Medicine | Human SP/SC | Psychotherapy training | [Using standardized patients to teach and learn psychotherapy](https://doi.org/10.1097/00001888-199805000-00058) | — |
+| Affective SP Portrayal | 1999 | Teaching and Learning in Medicine | Human SP/SC | SP ethics and welfare | [Effects of Portraying Psychologically and Emotionally Complex Standardized Patient Roles](https://doi.org/10.1207/s15328015tl110303) | — |
+| Emotional Realism SP | 2001 | Academic medicine : journal of the Association of American Medical Colleges | Human SP/SC | Psychiatric SP realism | [Conveying Emotional Realism](https://doi.org/10.1097/00001888-200103000-00003) | — |
+| Psychotherapy Feedback SP | 2002 | Academic Psychiatry | Human SP/SC | Psychotherapy course training | [Using Standardized Patients for Formative Feedback in an Introduction to Psychotherapy Course](https://doi.org/10.1176/appi.ap.26.3.168) | — |
+| Undergraduate Psychiatry SP | 2007 | Psychiatric Bulletin | Human SP/SC | Undergraduate psychiatry | [Simulated patients in undergraduate education in psychiatry](https://doi.org/10.1192/pb.bp.106.010793) | — |
+| Virtual Patient Interview | 2008 | Studies in Health Technology and Informatics | Virtual patient | Conduct-disorder interview | [Objective structured clinical interview training using a virtual human patient](https://pubmed.ncbi.nlm.nih.gov/18391321/) | — |
+| PTSD Virtual Patient | 2008 | LNCS | Virtual patient | PTSD assessment training | [Evaluation of Justina: A Virtual Patient with PTSD](https://doi.org/10.1007/978-3-540-85483-8_40) | — |
+| SP Anxiety Reduction | 2014 | Clinical Simulation in Nursing | Human SP/SC | Mental health nursing | [Utilization of Standardized Patients to Decrease Nursing Student Anxiety](https://doi.org/10.1016/j.ecns.2014.09.006) | — |
+| Psychiatric Simulation Engagement | 2017 | Academic Psychiatry | Human SP/SC | Psychiatry education | [Simulation in Undergraduate Psychiatry: Exploring the Depth of Learner Engagement](https://doi.org/10.1007/s40596-016-0633-9) | — |
+| Psychiatry SP Evaluation | 2018 | BMC Medical Education | Human SP/SC | Clinical skills learning | [Standardized patients in psychiatry – the best way to learn clinical skills?](https://link.springer.com/article/10.1186/s12909-018-1184-4) | — |
+| Psychiatric Communication Training | 2020 | Frontiers in Psychiatry | Human SP/SC | Communication skills | [Single-Day Simulation-Based Training Improves Communication and Psychiatric Skills of Medical Students](https://doi.org/10.3389/fpsyt.2020.00221) | — |
+| ELIZA Dialogue System | 1966 | Communications of the ACM | Rule-based dialogue | Early chatbot role-play | [ELIZA—a computer program for the study of natural language communication between man and machine](https://doi.org/10.1145/365153.365168) | — |
+| Legal Client Interview | 1980 | ETS Research Report | Scenario protocol | Legal interviewing | [ASSESSING CLINICAL SKILLS IN LEGAL EDUCATION: SIMULATION EXERCISES IN CLIENT INTERVIEWING](https://doi.org/10.1002/j.2333-8504.1980.tb01233.x) | — |
+| Bar Exam Standardized Client | 2004 | Ga. St. UL Rev. | Human SP/SC | Bar examination evaluation | [Standardized clients: a possible improvement for the bar exam](https://readingroom.law.gsu.edu/gsulr/vol20/iss4/9/) | — |
+| AutoTutor Tutoring System | 2005 | IEEE Transactions on Education | Rule-based dialogue | Educational tutoring | [AutoTutor: An Intelligent Tutoring System With Mixed-Initiative Dialogue](https://doi.org/10.1109/te.2005.856149) | — |
+| Legal Communication Assessment | 2006 | Clinical L. Rev. | Human SP/SC | Lawyer-client communication | [Valuing what clients think: standardized clients and the assessment of communicative competence](https://strathprints.strath.ac.uk/3212/) | — |
+| ALICE Chatbot Framework | 2007 | Parsing the Turing test: Philosophical and methodological issues in the quest for the thinking computer | Rule-based dialogue | Open-domain chatbot | [The anatomy of ALICE](https://doi.org/10.1007/978-1-4020-6710-5_13) | — |
+| Online Simulated Client | 2022 | European Journal of Law and Technology | Human SP/SC | Digital legal education | [Transitioning simulated client interviews from face-to-face to online: Still an entrustable professional activity?](https://ejlt.org/index.php/ejlt/article/view/899) | — |
+| B2B Negotiation Simulation | 2022 | Industrial Marketing Management | Scenario protocol | B2B sales negotiation | [Multiple parties behind and across the table: A role-play simulation of parallel, competitive order negotiations for training B2B sales professionals](https://doi.org/10.1016/j.indmarman.2022.03.014) | — |
+| Business Negotiation Practice | 2023 | Heliyon | Scenario protocol | Negotiation communication | [Using business negotiation simulation with China's English-major undergraduates for practice ability development](https://doi.org/10.1016/j.heliyon.2023.e16236) | — |
 
-- v0.1: Initial repository page, taxonomy, and curated resource index.
 
-## Quick Links
+## 2. Single-agent textual LLM simulation
 
-- [1. Methodologies of Simulation](#1-methodologies-of-simulation)
-  - [1.1 Traditional-based Client Simulation](#11-traditional-based-client-simulation)
-  - [1.2 LLM Prompt-based Client Role-Playing](#12-llm-prompt-based-client-role-playing)
-  - [1.3 Multi-Agent Client Simulation](#13-multi-agent-client-simulation)
-  - [1.4 Multimodal Client Simulation](#14-multimodal-client-simulation)
-- [2. Dataset, Benchmark, and Evaluation](#2-dataset-benchmark-and-evaluation)
-  - [2.1 Dataset](#21-dataset)
-  - [2.2 Benchmark](#22-benchmark)
-  - [2.3 Evaluation Metrics](#23-evaluation-metrics)
-- [3. Applications](#3-applications)
-- [4. Challenges and Future Directions](#4-challenges-and-future-directions)
+| Method | Year | Venue / Source | Category | Base model | Focus | Paper | Code |
+|---|---:|---|---|---|---|---|---|
+| Structured-Feedback SP | 2024 | BMC Medical Education | Profile/Scenario Conditioning | ChatGPT-3.5 | Clinical decision-making | [Large language models improve clinical decision making of medical students through patient simulation and structured feedback: a randomized controlled trial](https://doi.org/10.1186/s12909-024-06399-7) | — |
+| SP+Feedback | 2024 | JMIR Medical Education | Stage/Reasoning Control | GPT-4 | History-taking feedback | [A Language Model–Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://doi.org/10.2196/59213) | — |
+| Challenging Patients | 2025 | arXiv | Principle/State Guidance | GPT-4 | Difficult communication | [Modeling Challenging Patient Interactions: LLMs for Medical Communication Training](https://arxiv.org/abs/2503.22250) | — |
+| Virtual Patients | 2025 | J Med Internet Res | Profile/Scenario Conditioning | Multiple | Clinical-reasoning training | [Virtual Patients Using Large Language Models: Scalable, Contextualized Simulation of Clinician-Patient Dialogue With Feedback](https://doi.org/10.2196/68486) | — |
+| Multimetric SP | 2025 | JMIR | Principle/State Guidance | GPT-4 | Medical-training assessment | [Application of Large Language Models in Medical Training Evaluation—Using ChatGPT as a Standardized Patient: Multimetric Assessment](https://doi.org/10.2196/59435) | — |
+| CommSkills-SP | 2025 | JMIR Medical Education | Stage/Reasoning Control | Multiple | Communication-skills training | [Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://doi.org/10.2196/81271) | — |
+| Patient-Zero | 2026 | arXiv | Retrieval/Memory Augmentation | Multiple | Synthetic patient generation | [Patient-Zero: Scaling Synthetic Patient Agents to Real-World Distributions without Real Patient Data](https://arxiv.org/abs/2509.11078) | — |
+| Multi-Stage Role-Play | 2026 | ArXiv | Stage/Reasoning Control | Multiple | Chinese patient simulation | [Multi-Stage Patient Role-Playing Framework for Realistic Clinical Interactions](https://arxiv.org/abs/2601.06373) | — |
+| PATIENT-ψ | 2024 | EMNLP | Principle/State Guidance | GPT-4 | CBT training | [PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://doi.org/10.18653/v1/2024.emnlp-main.711) | [Code](https://github.com/ruiyiw/patient-psi) |
+| Roleplay-doh | 2024 | EMNLP | Principle/State Guidance | GPT-4 Turbo | Counseling practice | [Roleplay-doh: Enabling Domain-Experts to Create LLM-simulated Patients via Eliciting and Adhering to Principles](https://doi.org/10.18653/v1/2024.emnlp-main.591) | — |
+| Client101 | 2025 | JMIR Medical Education | Retrieval/Memory Augmentation | GPT-4 | Psychotherapy training | [Leveraging Large Language Models for Simulated Psychotherapy Client Interactions: Development and Usability Study of Client101](https://doi.org/10.2196/68056) | — |
+| TalkDep | 2025 | CIKM | Stage/Reasoning Control | GPT-4o | Depression-screening benchmark | [TalkDep: Clinically Grounded LLM Personas for Conversation-Centric Depression Screening](https://arxiv.org/abs/2508.04248) | — |
+| Eeyore | 2025 | Findings of the Association for Computational Linguistics: ACL 2025 | Model Adaptation/Alignment | Llama 3.1 8B Instruct | Depression simulation | [Eeyore: Realistic Depression Simulation via Expert-in-the-Loop Supervised and Preference Optimization](https://doi.org/10.18653/v1/2025.findings-acl.707) | — |
+| ChatHaruhi | 2023 | arXiv preprint arXiv:2308.09597 | Retrieval/Memory Augmentation | Multiple | Character role-play | [Chatharuhi: Reviving anime character in reality via large language model](https://arxiv.org/abs/2308.09597) | — |
+| Rehearsal | 2024 | Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems | Principle/State Guidance | GPT-4 | Conflict resolution | [Rehearsal: Simulating Conflict to Teach Conflict Resolution](https://doi.org/10.1145/3613904.3642159) | — |
+| RoleAgent | 2024 | NeurIPS | Retrieval/Memory Augmentation | Multiple | Script-grounded character simulation | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://doi.org/10.52202/079017-1563) | — |
+| Generative User Simulators | 2024 | Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers) | Profile/Scenario Conditioning | Multiple | Recommender evaluation | [Evaluating Large Language Models as Generative User Simulators for Conversational Recommendation](https://doi.org/10.18653/v1/2024.naacl-long.83) | — |
+| CharacterGPT | 2025 | Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: Industry Track) | Retrieval/Memory Augmentation | Multiple | Persona consistency | [CharacterGPT: A Persona Reconstruction Framework for Role-Playing Agents](https://doi.org/10.18653/v1/2025.naacl-industry.24) | [Code](https://github.com/Jeiyoon/charactergpt) |
+| TailorRPA | 2025 | Findings of the Association for Computational Linguistics: EMNLP 2025 | Retrieval/Memory Augmentation | Qwen2.5-7B-Instruct | Character personalization | [TailorRPA: A Retrieval-Based Framework for Eliciting Personalized and Coherent Role-Playing Agents in General Domain](https://doi.org/10.18653/v1/2025.findings-emnlp.288) | — |
+| Crab | 2025 | Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) | Model Adaptation/Alignment | Multiple | Configurable character role-play | [Crab: A Novel Configurable Role-Playing LLM with Assessing Benchmark](https://doi.org/10.18653/v1/2025.acl-long.731) | — |
+| MECoT | 2025 | Findings of the Association for Computational Linguistics: ACL 2025 | Principle/State Guidance | Multiple | Emotional consistency | [MECoT: Markov Emotional Chain-of-Thought for Personality-Consistent Role-Playing](https://doi.org/10.18653/v1/2025.findings-acl.435) | — |
+| R-CHAR | 2025 | Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing | Model Adaptation/Alignment | Qwen2.5-7B | Cognitive role consistency | [R-CHAR: A Metacognition-Driven Framework for Role-Playing in Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.1372) | — |
 
-## 1. Methodologies of Simulation
 
-### 1.1 Traditional-based Client Simulation
+## 3. Multi-agent textual LLM simulation
 
-**Physical Healthcare Clients**
+| Method | Year | Venue / Source | Category | Base model | Focus | Paper | Code |
+|---|---:|---|---|---|---|---|---|
+| LLM-Mini-CEX | 2023 | arXiv | Simulation/Evaluation Environment | BLOOM-7B | Diagnostic-LLM evaluation | [LLM-Mini-CEX: Automatic Evaluation of Large Language Model for Diagnostic Conversation](https://arxiv.org/abs/2308.07635) | — |
+| SAPS | 2024 | arXiv | State/Persona Modeling | GPT-4-1106-preview | Clinical-LLM evaluation | [Automatic Interactive Evaluation for Large Language Models with State Aware Patient Simulator](https://arxiv.org/abs/2403.08495) | [Code](https://github.com/BlueZeros/Automatic_Interactive_Evaluation) |
+| Adaptive-VP | 2025 | ACL | State/Persona Modeling | Claude 3.5 Sonnet | Nurse communication training | [Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees’ Dialogue to Facilitate Nurse Communication Training](https://doi.org/10.18653/v1/2025.findings-acl.118) | — |
+| EvoPatient | 2025 | ACL | Experience-Based Optimization | Multiple | Standardized-patient training | [LLMs Can Simulate Standardized Patients via Agent Coevolution](https://doi.org/10.18653/v1/2025.acl-long.846) | [Code](https://github.com/ZJUMAI/EvoPatient) |
+| PATIENTSIM | 2025 | NeurIPS | State/Persona Modeling | Multiple | Realistic history-taking | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://arxiv.org/abs/2505.17818) | [Code](https://github.com/dek924/PatientSim) |
+| Agent Hospital | 2025 | arXiv | Experience-Based Optimization | GPT-3.5-turbo-1106 | Medical-agent evolution | [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](https://arxiv.org/abs/2405.02957) | — |
+| AI Hospital | 2025 | COLING | Simulation/Evaluation Environment | GPT-3.5-turbo | Interactive diagnosis evaluation | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
+| AutoMedic | 2025 | arXiv | Role/Workflow Orchestration | GPT-4o | Automated clinical evaluation | [AutoMedic: An Automated Evaluation Framework for Clinical Conversational Agents with Medical Dataset Grounding](https://arxiv.org/abs/2512.10195) | — |
+| DynamiCare | 2025 | arXiv | Role/Workflow Orchestration | GPT-4.1 | Open-ended diagnosis | [DynamiCare: A Dynamic Multi-Agent Framework for Interactive and Open-Ended Medical Decision-Making](https://arxiv.org/abs/2507.02616) | — |
+| PSYCHE | 2025 | arXiv | State/Persona Modeling | GPT-4o | Psychiatric-agent evaluation | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | — |
+| TRUST | 2025 | JAMIA | Role/Workflow Orchestration | Claude 3.5 Sonnet | PTSD interview evaluation | [TRUST: An LLM-Based Dialogue System for Trauma Understanding and Structured Assessments](https://arxiv.org/abs/2504.21851) | — |
+| EmoAgent | 2025 | EMNLP | Role/Workflow Orchestration | Multiple | Mental-health safety | [EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety](https://doi.org/10.18653/v1/2025.emnlp-main.594) | [Code](https://github.com/1akaman/EmoAgent) |
+| AnnaAgent | 2025 | ACL | Memory/Reasoning Architecture | Multiple | Long-term seeker simulation | [AnnaAgent: Dynamic Evolution Agent System with Multi-Session Memory for Realistic Seeker Simulation](https://doi.org/10.18653/v1/2025.findings-acl.1192) | [Code](https://github.com/sci-m-wang/AnnaAgent) |
+| DSM5AgentFlow | 2025 | CIKM | Role/Workflow Orchestration | Multiple | Explainable DSM-5 diagnosis | [Trustworthy AI Psychotherapy: Multi-Agent LLM Workflow for Counseling and Explainable Mental Disorder Diagnosis](https://doi.org/10.1145/3746252.3761164) | — |
+| SynthAgent | 2026 | arXiv | Role/Workflow Orchestration | Multiple | Comorbid patient journeys | [SynthAgent: A Multi-Agent LLM Framework for Realistic Patient Simulation–A Case Study in Obesity with Mental Health Comorbidities](https://arxiv.org/abs/2602.08254) | — |
+| Honesty-Aware Framework | 2026 | arXiv | State/Persona Modeling | Multiple | Psychiatric-intake fidelity | [Honesty-Aware Multi-Agent Framework for High-Fidelity Synthetic Data Generation in Digital Psychiatric Intake Doctor-Patient Interactions](https://arxiv.org/abs/2601.09216) | — |
+| Generative Agents | 2023 | UIST | Memory/Reasoning Architecture | GPT-3.5-turbo | Believable human behavior simulation | [Generative Agents: Interactive Simulacra of Human Behavior](https://doi.org/10.1145/3586183.3606763) | [Code](https://github.com/joonspk-research/generative_agents) |
+| CAMEL | 2023 | NeurIPS | Role/Workflow Orchestration | GPT-3.5-turbo | Autonomous role dialogue | [CAMEL: Communicative Agents for "Mind" Exploration of Large Language Model Society](https://doi.org/10.52202/075280-2264) | [Code](https://github.com/camel-ai/camel) |
+| IBSEN | 2024 | ACL | Role/Workflow Orchestration | GPT-3.5-turbo-1106 | Controllable drama generation | [IBSEN: Director-Actor Agent Collaboration for Controllable and Interactive Drama Script Generation](https://doi.org/10.18653/v1/2024.acl-long.88) | [Code](https://github.com/OpenDFM/ibsen) |
+| SOTOPIA | 2024 | International Conference on Learning Representations | Simulation/Evaluation Environment | Multiple | Social-intelligence evaluation | [SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents](https://proceedings.iclr.cc/paper_files/paper/2024/file/b3075b88e583a0e98d8b24338a613060-Paper-Conference.pdf) | — |
+| SOTOPIA-π | 2024 | ACL | Experience-Based Optimization | Mistral-7B | Social intelligence training | [SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents](https://doi.org/10.18653/v1/2024.acl-long.698) | [Code](https://github.com/sotopia-lab/sotopia) |
+| Deciphering Digital Detectives | 2024 | Findings of the Association for Computational Linguistics: ACL 2024 | Memory/Reasoning Architecture | Multiple | Mystery-game reasoning | [Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games](https://doi.org/10.18653/v1/2024.findings-acl.490) | — |
+| SocialBench | 2024 | ACL | Simulation/Evaluation Environment | Multiple | Role-agent sociality evaluation | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://doi.org/10.18653/v1/2024.findings-acl.125) | [Code](https://github.com/X-PLUG/SocialBench) |
+| Personality-Aware Student Simulation | 2024 | Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing | State/Persona Modeling | Multiple | Conversational tutoring | [Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems](https://doi.org/10.18653/v1/2024.emnlp-main.37) | — |
+| MIRAGE | 2025 | ACL | Simulation/Evaluation Environment | Multiple | Complex social role-play | [MIRAGE: Exploring How Large Language Models Perform in Complex Social Interactive Environments](https://doi.org/10.18653/v1/2025.acl-short.2) | [Code](https://github.com/lime728/MIRAGE) |
+| CharacterBox | 2025 | NAACL | Simulation/Evaluation Environment | Multiple | Trajectory-based role evaluation | [CharacterBox: Evaluating the Role-Playing Capabilities of LLMs in Text-Based Virtual Worlds](https://doi.org/10.18653/v1/2025.naacl-long.323) | [Code](https://github.com/Paitesanshi/CharacterBox) |
+| Multi-Agent Character Simulation | 2025 | In2Writing | Role/Workflow Orchestration | GPT-4o | Story generation | [Multi-Agent Based Character Simulation for Story Writing](https://doi.org/10.18653/v1/2025.in2writing-1.9) | — |
+| LLM Roleplay | 2025 | Proceedings of the Third Workshop on Social Influence in Conversations (SICon 2025) | Role/Workflow Orchestration | Multiple | Human-chatbot simulation | [LLM Roleplay: Simulating Human-Chatbot Interaction](https://doi.org/10.18653/v1/2025.sicon-1.1) | — |
+| Persona-Driven User Simulations | 2025 | Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track | State/Persona Modeling | Gemini-1.5-Flash | Sales-agent evaluation | [Evaluating Conversational Agents with Persona-driven User Simulations based on Large Language Models: A Sales Bot Case Study](https://doi.org/10.18653/v1/2025.emnlp-industry.16) | — |
 
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Standardized Patient | 1968 | CMAJ | Human standardized-patient role play for medical teaching. | [Simulated patients in medical teaching](https://pubmed.ncbi.nlm.nih.gov/5646104/) | - |
-| OSCE Assessment | 1975 | BMJ | Station-based assessment of clinical competence. | [Assessment of clinical competence using objective structured examination.](https://www.bmj.com/content/1/5955/447) | - |
-| OSCE Standard Framework | 1979 | Medical Education | Objective structured clinical examination framework. | [Assessment of clinical competence using an objective structured clinical examination (OSCE).](https://doi.org/10.1111/j.1365-2923.1979.tb00918.x) | - |
-| Harvey Cardiology Simulator | 1980 | American Journal of Cardiology | Physical cardiology patient simulator for bedside teaching. | [“Harvey,” the cardiology patient simulator: pilot studies on teaching effectiveness](https://doi.org/10.1016/0002-9149%2880%2990123-X) | - |
-| SP Educational Framework | 1993 | Academic Medicine | Overview of standardized patients for teaching and evaluation. | [An overview of the uses of standardized patients for teaching and evaluating clinical skills. AAMC](https://doi.org/10.1097/00001888-199306000-00002) | - |
-| Trauma Team Simulation | 2002 | Journal of Trauma | Advanced human patient simulator for trauma resuscitation. | [Evaluation of Trauma Team Performance Using an Advanced Human Patient Simulator for Resuscitation Training](https://pubmed.ncbi.nlm.nih.gov/12045633/) | - |
-| AMEE SP Guide | 2009 | Medical Teacher | Practice guide for simulated patients in medical education. | [The use of simulated patients in medical education: AMEE Guide No 42](https://pubmed.ncbi.nlm.nih.gov/19811162/) | - |
-| Patient Safety Simulation | 2011 | CHEST | Simulation-centered view of patient-safety training. | [Simulation to Enhance Patient Safety: Why Aren't We There Yet?](https://www.sciencedirect.com/science/article/pii/S0012369211605205) | - |
 
-**Mental Health Clients**
+## 4. Multimodal client simulation
 
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Psychotherapy SP Training | 1998 | Academic Medicine | Standardized patients for psychotherapy teaching and learning. | [Using standardized patients to teach and learn psychotherapy](https://pubmed.ncbi.nlm.nih.gov/9643906/) | - |
-| Emotional Realism SP | 2001 | Academic Medicine | Actor portrayal challenge for emotional realism. | [Conveying emotional realism: a challenge to using standardized patients](https://pubmed.ncbi.nlm.nih.gov/11242566/) | - |
-| Virtual Patient Interview | 2008 | Studies in Health Technology and Informatics | Virtual human patient for structured clinical interview training. | [Objective structured clinical interview training using a virtual human patient](https://pubmed.ncbi.nlm.nih.gov/18391321/) | - |
-| PTSD Virtual Patient | 2008 | LNCS | Virtual PTSD patient for interview and assessment practice. | [Evaluation of Justina: A Virtual Patient with PTSD](https://doi.org/10.1007/978-3-540-85483-8_40) | - |
-| Psychiatric Teaching Simulation | 2012 | Advances in Psychiatric Treatment | Review and guidance for simulation in psychiatric teaching. | [Simulation in psychiatric teaching](https://doi.org/10.1192/apt.bp.110.008482) | - |
-| Psychiatry SP Evaluation | 2018 | BMC Medical Education | Standardized patients for psychiatry clinical-skills learning. | [Standardized patients in psychiatry - the best way to learn clinical skills?](https://link.springer.com/article/10.1186/s12909-018-1184-4) | - |
-| Psychiatry Simulation Meta-Analysis | 2020 | Medical Education | Systematic review and meta-analysis of psychiatry simulation. | [Simulation in psychiatry for medical doctors: a systematic review and meta-analysis](https://doi.org/10.1111/medu.14166) | - |
+| Method | Year | Venue / Source | Category | Base model | Focus | Paper | Code |
+|---|---:|---|---|---|---|---|---|
+| MPathic-VR | 2019 | JMIR | Scripted Multimodal Enactment | - | Clinical communication skills | [Medical Students’ Experiences and Outcomes Using a Virtual Human Simulation to Improve Communication Skills: Mixed Methods Study](https://doi.org/10.2196/15459) | — |
+| Pediatric Nursing VR | 2024 | JMIR Medical Education | Scripted Multimodal Enactment | - | Nursing simulation education | [Multidisciplinary Design–Based Multimodal Virtual Reality Simulation in Nursing Education: Mixed Methods Study](https://doi.org/10.2196/53106) | — |
+| Med-PMC | 2024 | arXiv | Evidence-Grounded Client Construction | Qwen-Max | Personalized medical consultation | [Med-PMC: Medical Personalized Multi-modal Consultation with a Proactive Ask-First-Observe-Next Paradigm](https://arxiv.org/abs/2408.08693) | [Code](https://github.com/LiuHC0428/Med-PMC) |
+| Robot-LLM Virtual Patient | 2024 | HRI | Modular Perception-Action Generation | GPT-3.5-turbo | Rheumatology clinical reasoning | [Creating Virtual Patients using Robots and Large Language Models: A Preliminary Study with Medical Students](https://doi.org/10.1145/3610978.3640592) | — |
+| Emotionally Responsive VP | 2023 | Simulation in Healthcare | Affect/State-Coupled Multimodal Behavior | Not specified | Clinical communication skills | [Designing and Evaluating an Emotionally Responsive Virtual Patient Simulation](https://doi.org/10.1097/SIH.0000000000000730) | — |
+| AgentClinic | 2025 | arXiv | Evidence-Grounded Client Construction | GPT-4 | Clinical AI evaluation | [AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments](https://arxiv.org/abs/2405.07960) | [Code](https://github.com/SamuelSchmidgall/AgentClinic) |
+| 3MDBench | 2025 | EMNLP | Evidence-Grounded Client Construction | Llama-3-8B-Instruct | Telemedicine consultation | [3MDBench: Medical Multimodal Multi-agent Dialogue Benchmark](https://doi.org/10.18653/v1/2025.emnlp-main.1353) | [Code](https://github.com/univanxx/3mdbench) |
+| VAPS | 2025 | CHI | Modular Perception-Action Generation | GPT-4o | Clinical communication training | [Designing VR Simulation System for Clinical Communication Training with LLMs-Based Embodied Conversational Agents](https://doi.org/10.1145/3706599.3719693) | — |
+| CLiVR | 2025 | arXiv | Modular Perception-Action Generation | Gemini-2.0-Flash | Doctor–patient training | [CLiVR: Conversational Learning System in Virtual Reality with AI-Powered Patients](https://arxiv.org/abs/2510.19031) | — |
+| LLM-Powered VP | 2025 | arXiv | Modular Perception-Action Generation | Gemini-1.5-Flash | OSCE-style skills training | [LLM-Powered Virtual Patient Agents for Interactive Clinical Skills Training with Automated Feedback](https://arxiv.org/abs/2508.13943) | — |
+| VRPatients | 2025 | BMC Medical Education | Scripted Multimodal Enactment | - | Medical student training | [Virtual patient simulation to enhance medical students’ clinical communication and decision-making skills: a pilot study](https://doi.org/10.1186/s12909-025-08507-7) | — |
+| SOPHIE | 2025 | arXiv | Affect/State-Coupled Multimodal Behavior | GPT-3.5-turbo | Cancer-care communication | [AI Standardized Patient Improves Human Conversations in Advanced Cancer Care](https://arxiv.org/abs/2505.02694) | — |
+| PAL | 2025 | CSCW | Affect/State-Coupled Multimodal Behavior | GPT-4o | Palliative-care training | [PAL: Designing Conversational Agents as Scalable, Cooperative Patient Simulators for Palliative‑Care Training](https://doi.org/10.1145/3715070.3749250) | — |
+| SCOT | 2025 | Advances in Simulation | Scripted Multimodal Enactment | - | Team communication training | [Training communication skills in a multiuser medical virtual reality simulation: a qualitative, observational study](https://doi.org/10.1186/s41077-025-00386-8) | — |
+| AIMS | 2026 | arXiv | Modular Perception-Action Generation | Gemini-2.5-Flash | Team-based clinical education | [Designing and Evaluating an AI-enhanced Immersive Multidisciplinary Simulation (AIMS) for Interprofessional Education](https://arxiv.org/abs/2510.08891) | — |
+| MDD Virtual Patient | 2019 | Journal of Affective Disorders | Scripted Multimodal Enactment | - | Psychiatric diagnosis training | [Evaluation of a virtual agent to train medical students conducting psychiatric interviews for diagnosing major depressive disorders](https://doi.org/10.1016/j.jad.2019.11.117) | — |
+| MIRROR | 2025 | EMNLP | Affect/State-Coupled Multimodal Behavior | GPT-3.5-turbo | Client resistance handling | [MIRROR: Multimodal Cognitive Reframing Therapy for Rolling with Resistance](https://doi.org/10.18653/v1/2025.emnlp-main.751) | — |
+| Voice-Enabled VP System | 2025 | arXiv | Modular Perception-Action Generation | Claude Sonnet 3.7 | Psychiatric assessment | [A Voice-Enabled Virtual Patient System for Interactive Training in Standardized Clinical Assessment](https://arxiv.org/abs/2511.00709) | — |
+| MetaHuman Patient Simulator | 2025 | arXiv.org | Evidence-Grounded Client Construction | - | Mental-health diagnosis training | [Learning When to Ask: Simulation-Trained Humanoids for Mental-Health Diagnosis](https://arxiv.org/abs/2512.08952) | — |
+| M2CoSC | 2025 | NAACL | Evidence-Grounded Client Construction | GPT-4 | Multimodal counseling simulation | [Multimodal Cognitive Reframing Therapy via Multi-hop Psychotherapeutic Reasoning](https://doi.org/10.18653/v1/2025.naacl-long.250) | — |
+| Psychiatric VSP | 2026 | BMC Psychiatry | Modular Perception-Action Generation | ERNIE 3.5–8K | Psychiatric interview training | [Development and preliminary evaluation of a virtual standardized patient system for psychiatric interview training](https://doi.org/10.1186/s12888-026-07896-3) | — |
+| NarrativePlay | 2024 | EACL | Modular Perception-Action Generation | GPT-3.5-turbo | Fictional narrative role-play | [NarrativePlay: Interactive Narrative Understanding](https://doi.org/10.18653/v1/2024.eacl-demo.10) | — |
+| MMRole | 2025 | ICLR | Unified Cross-Modal Role Modeling | Qwen-VL-Chat | Multimodal character simulation | [Mmrole: A comprehensive framework for developing and evaluating multimodal role-playing agents](https://proceedings.iclr.cc/paper_files/paper/2025/hash/a5c7206fd66e8314bb21a04492359353-Abstract-Conference.html) | [Code](https://github.com/YanqiDai/MMRole) |
+| Video2Roleplay | 2025 | EMNLP | Evidence-Grounded Client Construction | InternVL2.5-8B | Video-guided role-play | [Video2Roleplay: A Multimodal Dataset and Framework for Video-Guided Role-playing Agents](https://doi.org/10.18653/v1/2025.emnlp-main.1209) | — |
+| OmniCharacter | 2025 | ACL | Unified Cross-Modal Role Modeling | Qwen2.5-7B-Instruct | Immersive vocal role-play | [OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction](https://doi.org/10.18653/v1/2025.acl-long.1276) | [Code](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/OmniCharacter) |
+| GenECA | 2025 | INTERSPEECH | Modular Perception-Action Generation | LLaMA 3.1 8B | Cross-domain conversation | [GenECA: A General-Purpose Framework for Real-Time Adaptive Multimodal Embodied Conversational Agents](https://www.isca-archive.org/interspeech_2025/patapati25_interspeech.html) | — |
+| UniCharacter | 2026 | arXiv | Unified Cross-Modal Role Modeling | BAGEL-7B-MoT | Customized multimodal role-play | [Towards Customized Multimodal Role-Play](https://arxiv.org/abs/2605.08129) | [Code](https://github.com/Tangc03/UniCharacter) |
+| Social VR ECA | 2026 | CHI | Modular Perception-Action Generation | Not specified | Foreign-language speaking training | [LLM-based Embodied Conversational Agent for Reducing Foreign Language Speaking Anxiety in Social VR](https://doi.org/10.1145/3772318.3791068) | — |
 
-**Beyond Healthcare: General Role-Playing**
 
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| ELIZA | 1966 | Communications of the ACM | Early rule-based natural-language psychotherapy-style dialogue system. | [ELIZA—a computer program for the study of natural language communication between man and machine](https://doi.org/10.1145/365153.365168) | - |
-| Legal Client Interview | 1980 | ETS Research Report | Simulation exercise for legal client interviewing skills. | [Assessing clinical skills in legal education: Simulation exercises in client interviewing](https://www.ets.org/research/policy_research_reports/publications/report/1980/hvwp.html) | - |
-| AutoTutor | 2005 | IEEE Transactions on Education | Mixed-initiative tutoring dialogue system. | [AutoTutor: An intelligent tutoring system with mixed-initiative dialogue](https://doi.org/10.1109/TE.2005.856149) | - |
-| ALICE | 2007 | Book | AIML-based open-domain chatbot framework. | [The Anatomy of A.L.I.C.E.](https://link.springer.com/book/10.1007/978-1-4020-6710-5) | - |
-| Online Simulated Client | 2022 | European Journal of Law and Technology | Online simulated-client interviews for legal education. | [Transitioning simulated client interviews from face-to-face to online: Still an entrustable professional activity?](https://ejlt.org/index.php/ejlt/article/view/899) | - |
-| Business Negotiation Practice | 2023 | Heliyon | Role-play simulation for business negotiation practice. | [Using business negotiation simulation with China's English-major undergraduates for practice ability development](https://doi.org/10.1016/j.heliyon.2023.e16236) | - |
+## 5. Datasets, benchmarks, and evaluation protocols
 
-### 1.2 LLM Prompt-based Client Role-Playing
+| Resource | Year | Venue / Source | Size | Benchmark unit / data form | Evaluation protocol / metrics | Paper | Code |
+|---|---:|---|---|---|---|---|---|
+| RoleBench | 2023 | ACL | 100 roles; 168K samples | Role profiles + QA | Reference matching; judge win rate | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://doi.org/10.18653/v1/2024.findings-acl.878) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
+| CharacterEval | 2024 | ACL | 77 characters; 11K examples | Chinese role dialogues | 13-dim scoring; CharacterRM | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://doi.org/10.18653/v1/2024.acl-long.638) | [Code](https://github.com/morecry/CharacterEval) |
+| InCharacter | 2024 | ACL | 32 characters; 14 scales | Profiles + interviews | Psychometric scoring | [InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews](https://doi.org/10.18653/v1/2024.acl-long.102) | [Code](https://github.com/Neph0s/InCharacter) |
+| ECHO | 2024 | arXiv | 10 persons; 800+ responses | Personal questionnaires | Indistinguishability test | [How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO](https://arxiv.org/abs/2404.13957) | [Code](https://github.com/CUHK-ARISE/ECHO) |
+| RoleAgentBench | 2024 | NeurIPS | 128 roles; 25 scripts | Script-grounded roles | Accuracy; win rate; recall | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://doi.org/10.52202/079017-1563) | — |
+| SocialBench | 2024 | ACL | 500 roles; 6K+ prompts | Social-context QA | Accuracy; keyword coverage | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://doi.org/10.18653/v1/2024.findings-acl.125) | [Code](https://github.com/X-PLUG/SocialBench) |
+| GPT-SP | 2024 | JMIR Medical Education | 1 case; 826 QAPs | History-taking case | Plausibility; usability | [A Generative Pretrained Transformer (GPT)–Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://doi.org/10.2196/53961) | — |
+| SP+Feedback | 2024 | JMIR Medical Education | 106 dialogues; 1.9K QAPs | Dialogues + feedback | Checklist; agreement | [A Language Model–Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://doi.org/10.2196/59213) | — |
+| Structured-Feedback SP | 2024 | BMC Medical Education | 21 students; 4 sessions | SP training sessions | CRI-HTI; ICC; ANOVA | [Large language models improve clinical decision making of medical students through patient simulation and structured feedback: a randomized controlled trial](https://doi.org/10.1186/s12909-024-06399-7) | — |
+| CureFun | 2024 | arXiv | 8 cases; 80 dialogues | SP scripts + dialogues | Checklist; GPT-4 Elo | [Leveraging Large Language Model as Simulated Patients for Clinical Education](https://arxiv.org/abs/2404.13066) | — |
+| ClientCAST | 2024 | arXiv | 300 sessions; 61 labels | Counseling profiles | Alliance; outcome scales | [Towards a Client-Centered Assessment of LLM Therapists by Client Simulation](https://arxiv.org/abs/2406.12266) | [Code](https://github.com/wangjs9/ClientCAST) |
+| Interactive Agents | 2024 | arXiv | 1K dialogues; 13 turns avg. | Full counseling sessions | WAI-O-S; arena Elo | [Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions](https://arxiv.org/abs/2408.15787) | [Code](https://github.com/qiuhuachuan/interactive-agents) |
+| PATIENT-ψ | 2024 | EMNLP | 106 CBT models | CBT patient models | Cognitive-model recovery | [PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://doi.org/10.18653/v1/2024.emnlp-main.711) | [Code](https://github.com/ruiyiw/patient-psi) |
+| CoSER | 2025 | ICML | 18K characters; 30K dialogues | Literary role dialogues | Acting/judge evaluation | [CoSER: Coordinating LLM-Based Persona Simulation of Established Roles](https://proceedings.mlr.press/v267/wang25dk.html) | [Code](https://github.com/Neph0s/CoSER) |
+| TwinVoice | 2025 | ACL | 4.6K personas; 5.7K instances | Persona instances | Accuracy; LLM judge | [TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation](https://arxiv.org/abs/2510.25536) | — |
+| RMTBench | 2025 | EMNLP | 80 roles; 8K+ rounds | Multi-turn role play | LLM-based scoring | [RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing](https://arxiv.org/abs/2507.20352) | — |
+| AI Hospital/MVME | 2025 | COLING | 506 cases | Diagnostic cases | Symptom/exam/diagnosis scores | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
+| PatientSim | 2025 | NeurIPS | 170 profiles; 37 persona combos | MIMIC patient profiles | Accuracy; consistency | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://arxiv.org/abs/2505.17818) | [Code](https://github.com/dek924/PatientSim) |
+| CommSkills-SP | 2025 | JMIR Medical Education | 5 students; 4 raters | Communication vignettes | SUS; physician ratings | [Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://doi.org/10.2196/81271) | — |
+| Multimetric SP | 2025 | JMIR | 300 main; 60 transfer runs | SP consultation runs | Multimetric ratings | [Application of Large Language Models in Medical Training Evaluation—Using ChatGPT as a Standardized Patient: Multimetric Assessment](https://doi.org/10.2196/59435) | — |
+| CARE-Bench | 2025 | AAAI | 500 profiles | Counseling profiles | WAI; BLRI; CCS-R | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://arxiv.org/abs/2511.09407) | — |
+| ROLETHINK | 2025 | EMNLP | 405 gold points; 22 characters | Hidden-thought cases | Auto metrics; human rating | [Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents](https://arxiv.org/abs/2503.08193) | [Code](https://github.com/airaer1998/RPA_Thought) |
+| MindVoyager | 2025 | ACL | 100 personas | Cognitive diagrams | CDER; IDSS; A/B test | [Can You Share Your Story? Modeling Clients’ Metacognition and Openness for LLM Therapist Evaluation](https://doi.org/10.18653/v1/2025.findings-acl.1332) | — |
+| PSYCHE | 2025 | arXiv | 10 raters | Psychiatric MFC profiles | Profile recovery; expert review | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | — |
+| PsyCLIENT | 2026 | arXiv | 120 profiles; 324 trajectories | Client profiles + trajectories | Authenticity; confusion rate | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | — |
 
-**Physical Healthcare Clients**
 
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| LLM-Mini-CEX | 2023 | arXiv | Automatic evaluation for diagnostic conversations. | [LLM-Mini-CEX: Automatic Evaluation of Large Language Model for Diagnostic Conversation](https://arxiv.org/abs/2308.07635) | - |
-| GPT-SP | 2024 | JMIR Medical Education | GPT-powered simulated patient for history taking. | [A Generative Pretrained Transformer (GPT)-Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://mededu.jmir.org/2024/1/e53961) | - |
-| SP+Feedback | 2024 | JMIR Medical Education | Language-model simulated patient with automated feedback. | [A Language Model-Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://mededu.jmir.org/2024/1/e59213) | - |
-| Patient-Zero | 2026 | arXiv | Synthetic patient agents scaled without real patient data. | [Patient-Zero: Scaling Synthetic Patient Agents to Real-World Distributions without Real Patient Data](https://arxiv.org/abs/2509.11078) | - |
-| Challenging Patient Interactions | 2025 | arXiv | LLM patients for difficult medical communication training. | [Modeling Challenging Patient Interactions: LLMs for Medical Communication Training](https://arxiv.org/abs/2503.22250) | - |
-| PAL | 2025 | CSCW | Cooperative patient simulator for palliative-care training. | [PAL: Designing Conversational Agents as Scalable, Cooperative Patient Simulators for Palliative-Care Training](https://doi.org/10.1145/3715070.3749250) | - |
-| EasyMED | 2026 | ACL | Comparison between human and LLM standardized patients. | [Human or LLM as Standardized Patients? A Comparative Study in Medical Education](https://aclanthology.org/2026.acl-long.1243/) | - |
+## Contributing
 
-**Mental Health Clients**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| PATIENT-psi | 2024 | EMNLP | LLM therapy patients grounded in CBT-style patient models. | [PATIENT-ψ: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://aclanthology.org/2024.emnlp-main.711/) | [Code](https://github.com/ruiyiw/patient-psi) |
-| Roleplay-doh | 2024 | EMNLP | Expert-authored behavioral principles for LLM-simulated patients. | [Roleplay-doh: Enabling Domain-Experts to Create LLM-simulated Patients via Eliciting and Adhering to Principles](https://aclanthology.org/2024.emnlp-main.591/) | - |
-| TalkDep | 2025 | CIKM | Clinically grounded depression personas for screening dialogues. | [TalkDep: Clinically Grounded LLM Personas for Conversation-Centric Depression Screening](https://doi.org/10.1145/3746252.3761617) | - |
-| TRUST | 2026 | JAMIA | Trauma understanding and structured-assessment dialogue simulation. | [TRUST: An LLM-Based Dialogue System for Trauma Understanding and Structured Assessments](https://doi.org/10.1093/jamia/ocag050) | - |
-| MindVoyager | 2025 | ACL | Client openness and metacognition modeling for therapist evaluation. | [Can You Share Your Story? Modeling Clients' Metacognition and Openness for LLM Therapist Evaluation](https://aclanthology.org/2025.findings-acl.1332/) | - |
-| PSYCHE | 2025 | arXiv | Multifaceted psychiatric patient simulation framework. | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | - |
-| PsyCLIENT | 2026 | arXiv | Client simulation via counseling trajectory modeling. | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | - |
-| CARE-Bench | 2026 | AAAI | Expert-guided diverse client simulations for counseling evaluation. | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://ojs.aaai.org/index.php/AAAI/article/view/41287) | - |
-
-**Beyond Healthcare: General Role-Playing**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Character-LLM | 2023 | EMNLP | Trainable role-playing agent for character simulation. | [Character-LLM: A Trainable Agent for Role-Playing](https://aclanthology.org/2023.emnlp-main.814/) | [Code](https://github.com/choosewhatulike/trainable-agents) |
-| RoleLLM | 2024 | ACL | Benchmarking and improving LLM role-playing ability. | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://aclanthology.org/2024.findings-acl.878/) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
-| InCharacter | 2024 | ACL | Personality-fidelity evaluation through psychological interviews. | [InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews](https://aclanthology.org/2024.acl-long.102/) | [Code](https://github.com/Neph0s/InCharacter) |
-| CharacterEval | 2024 | ACL | Chinese benchmark for role-playing conversational agents. | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://aclanthology.org/2024.acl-long.638/) | [Code](https://github.com/morecry/CharacterEval) |
-| RoleAgent | 2024 | NeurIPS | Script-based construction and benchmarking of role-playing agents. | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5875aca1ef70285a35940afbbce0f9fb-Abstract-Datasets_and_Benchmarks_Track.html) | - |
-| ROLETHINK | 2025 | EMNLP | Inner-thought reasoning benchmark for role-playing agents. | [Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents](https://aclanthology.org/2025.findings-emnlp.819/) | - |
-
-### 1.3 Multi-Agent Client Simulation
-
-**Physical Healthcare Clients**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| SAPS | 2024 | arXiv | State-aware patient simulator for interactive LLM evaluation. | [Automatic Interactive Evaluation for Large Language Models with State Aware Patient Simulator](https://arxiv.org/abs/2403.08495) | [Code](https://github.com/BlueZeros/Automatic_Interactive_Evaluation) |
-| Adaptive-VP | 2025 | ACL | Virtual patient that adapts to trainee dialogue behavior. | [Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees' Dialogue to Facilitate Nurse Communication Training](https://aclanthology.org/2025.findings-acl.118/) | - |
-| EvoPatient | 2025 | ACL | Agent coevolution for standardized-patient simulation. | [LLMs Can Simulate Standardized Patients via Agent Coevolution](https://aclanthology.org/2025.acl-long.846/) | [Code](https://github.com/ZJUMAI/EvoPatient) |
-| PatientSim | 2025 | NeurIPS | Persona-driven doctor-patient interaction simulator. | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://papers.neurips.cc/paper_files/paper/2025/hash/24945e3bdc7b3f4b2e64b9979a16f38e-Abstract-Datasets_and_Benchmarks_Track.html) | - |
-| Agent Hospital | 2025 | arXiv | Hospital simulacrum with evolvable medical agents. | [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](https://arxiv.org/abs/2405.02957) | - |
-| AI Hospital | 2025 | COLING | Multi-agent medical interaction simulator and benchmark. | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
-| MedAgentSim | 2025 | MICCAI | Self-evolving multi-agent clinical interaction simulation. | [MedAgentSim: Self-evolving Multi-agent Simulations for Realistic Clinical Interactions](https://papers.miccai.org/miccai-2025/0537-Paper2575.html) | [Code](https://github.com/MAXNORM8650/MedAgentSim) |
-| AutoMedic | 2025 | arXiv | Dataset-grounded automated clinical-conversation evaluation. | [AutoMedic: An Automated Evaluation Framework for Clinical Conversational Agents with Medical Dataset Grounding](https://arxiv.org/abs/2512.10195) | - |
-| DynamiCare | 2025 | arXiv | Dynamic multi-agent medical decision-making simulation. | [DynamiCare: A Dynamic Multi-Agent Framework for Interactive and Open-Ended Medical Decision-Making](https://arxiv.org/abs/2507.02616) | - |
-
-**Mental Health Clients**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| EmoAgent | 2025 | EMNLP | Mental-health safety assessment and safeguard agents. | [EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety](https://aclanthology.org/2025.emnlp-main.594/) | [Code](https://github.com/1akaman/EmoAgent) |
-| AnnaAgent | 2025 | ACL | Dynamic seeker simulation with multi-session memory. | [AnnaAgent: Dynamic Evolution Agent System with Multi-Session Memory for Realistic Seeker Simulation](https://aclanthology.org/2025.findings-acl.1192/) | [Code](https://github.com/sci-m-wang/AnnaAgent) |
-| MIND | 2025 | EMNLP | Multi-agent inner dialogue for psychological healing. | [MIND: Towards Immersive Psychological Healing with Multi-Agent Inner Dialogue](https://aclanthology.org/2025.findings-emnlp.499/) | - |
-| DSM5AgentFlow | 2025 | CIKM | Multi-agent workflow for counseling and explainable diagnosis. | [Trustworthy AI Psychotherapy: Multi-Agent LLM Workflow for Counseling and Explainable Mental Disorder Diagnosis](https://doi.org/10.1145/3746252.3761164) | - |
-| SynthAgent | 2026 | arXiv | Multi-agent patient simulation with obesity and mental-health comorbidity. | [SynthAgent: A Multi-Agent LLM Framework for Realistic Patient Simulation--A Case Study in Obesity with Mental Health Comorbidities](https://arxiv.org/abs/2602.08254) | - |
-| Honesty-Aware Framework | 2026 | arXiv | Honesty-aware psychiatric intake data generation. | [Honesty-Aware Multi-Agent Framework for High-Fidelity Synthetic Data Generation in Digital Psychiatric Intake Doctor-Patient Interactions](https://arxiv.org/abs/2601.09216) | - |
-
-**Beyond Healthcare: General Role-Playing**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Generative Agents | 2023 | UIST | Believable human-behavior simulation with memory and planning. | [Generative Agents: Interactive Simulacra of Human Behavior](https://doi.org/10.1145/3586183.3606763) | [Code](https://github.com/joonspk-research/generative_agents) |
-| CAMEL | 2023 | NeurIPS | Role-assigned communicative agents for society simulation. | [CAMEL: Communicative Agents for "Mind" Exploration of Large Language Model Society](https://proceedings.neurips.cc/paper/2023/hash/a3621ee907def47c1b952ade25c67698-Abstract-Conference.html) | [Code](https://github.com/camel-ai/camel) |
-| IBSEN | 2024 | ACL | Director-actor collaboration for interactive drama scripts. | [IBSEN: Director-actor agent collaboration for controllable and interactive drama script generation](https://aclanthology.org/2024.acl-long.88/) | [Code](https://github.com/OpenDFM/ibsen) |
-| SOTOPIA | 2024 | ICLR | Interactive environment for social intelligence evaluation. | [SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents](https://proceedings.iclr.cc/paper_files/paper/2024/file/b3075b88e583a0e98d8b24338a613060-Paper-Conference.pdf) | [Code](https://github.com/sotopia-lab/sotopia) |
-| SOTOPIA-pi | 2024 | ACL | Interactive learning of socially intelligent language agents. | [SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents](https://aclanthology.org/2024.acl-long.698/) | [Code](https://github.com/sotopia-lab/sotopia) |
-| SocialBench | 2024 | ACL | Individual and group sociality evaluation for role-playing agents. | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://aclanthology.org/2024.findings-acl.125/) | [Code](https://github.com/X-PLUG/SocialBench) |
-| MIRAGE | 2025 | ACL | Complex social interactive environments for LLM role-play. | [MIRAGE: Exploring How Large Language Models Perform in Complex Social Interactive Environments](https://aclanthology.org/2025.acl-short.2/) | [Code](https://github.com/lime728/MIRAGE) |
-| CharacterBox | 2025 | NAACL | Virtual-world sandbox for role-playing trajectories. | [CharacterBox: Evaluating the Role-Playing Capabilities of LLMs in Text-Based Virtual Worlds](https://aclanthology.org/2025.naacl-long.323/) | [Code](https://github.com/Paitesanshi/CharacterBox) |
-| Multi-Agent Character Simulation | 2025 | In2Writing | Multi-agent story-writing character simulation. | [Multi-Agent Based Character Simulation for Story Writing](https://aclanthology.org/2025.in2writing-1.9/) | - |
-
-### 1.4 Multimodal Client Simulation
-
-**Physical Healthcare Clients**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Virtual Human Simulation | 2019 | JMIR | Virtual human simulation for clinical communication skills. | [Medical students' experiences and outcomes using a virtual human simulation to improve communication skills: mixed methods study](https://www.jmir.org/2019/11/e15459/) | - |
-| Med-PMC | 2024 | arXiv | Personalized multimodal consultation with ask-first workflow. | [Med-PMC: Medical Personalized Multi-modal Consultation with a Proactive Ask-First-Observe-Next Paradigm](https://arxiv.org/abs/2408.08693) | - |
-| Robot-LLM Virtual Patient | 2024 | HRI | Robot and LLM virtual patient for medical-student training. | [Creating Virtual Patients using Robots and Large Language Models: A Preliminary Study with Medical Students](https://doi.org/10.1145/3610978.3640592) | - |
-| AgentClinic | 2025 | arXiv | Multimodal clinical agent benchmark. | [AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments](https://arxiv.org/abs/2405.07960) | [Code](https://github.com/SamuelSchmidgall/AgentClinic) |
-| 3MDBench | 2025 | EMNLP | Medical multimodal multi-agent dialogue benchmark. | [3MDBench: Medical Multimodal Multi-agent Dialogue Benchmark](https://aclanthology.org/2025.emnlp-main.1353/) | [Code](https://github.com/univanxx/3mdbench) |
-| VR Clinical Simulation System | 2025 | CHI | VR clinical communication simulation with embodied agents. | [Designing VR simulation system for clinical communication training with LLMs-based embodied conversational agents](https://doi.org/10.1145/3706599.3719693) | - |
-| CLiVR | 2025 | arXiv | VR conversational learning with AI-powered patients. | [CLiVR: Conversational Learning System in Virtual Reality with AI-Powered Patients](https://arxiv.org/abs/2510.19031) | - |
-| LLM-Powered VP | 2025 | arXiv | Interactive virtual patient with automated feedback. | [LLM-Powered Virtual Patient Agents for Interactive Clinical Skills Training with Automated Feedback](https://arxiv.org/abs/2508.13943) | - |
-| AI Standardized Patient | 2025 | arXiv | AI standardized patient for advanced cancer-care conversation. | [AI Standardized Patient Improves Human Conversations in Advanced Cancer Care](https://arxiv.org/abs/2505.02694) | - |
-| AIMS | 2026 | arXiv | AI-enhanced immersive multidisciplinary simulation. | [Designing and Evaluating an AI-enhanced Immersive Multidisciplinary Simulation (AIMS) for Interprofessional Education](https://arxiv.org/abs/2510.08891) | - |
-
-**Mental Health Clients**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| Psychiatric VP Evaluation | 2020 | Journal of Affective Disorders | Virtual agent for psychiatric interview training. | [Evaluation of a virtual agent to train medical students conducting psychiatric interviews for diagnosing major depressive disorders](https://doi.org/10.1016/j.jad.2019.11.117) | - |
-| Psychiatric VP Design Guidelines | 2020 | Journal on Multimodal User Interfaces | Design guidelines for psychiatric virtual patients. | [Guidelines for the design of a virtual patient for psychiatric interview training](https://doi.org/10.1007/s12193-020-00338-8) | - |
-| Embodied Virtual Patient | 2022 | Frontiers in Virtual Reality | Embodied virtual patients for psychiatric and geriatric care training. | [Embodied Virtual Patients as a Simulation-Based Framework for Training Clinician-Patient Communication Skills: An Overview of Their Use in Psychiatric and Geriatric Care](https://www.frontiersin.org/articles/10.3389/frvir.2022.827312) | - |
-| Emotionally Responsive VP | 2024 | Simulation in Healthcare | Emotion-adaptive virtual patient simulation. | [Designing and Evaluating an Emotionally Responsive Virtual Patient Simulation](https://pubmed.ncbi.nlm.nih.gov/37651599/) | - |
-| AVATAR Therapy | 2024 | Nature Medicine | Digital avatar therapy for psychosis-related distressing voices. | [Digital AVATAR therapy for distressing voices in psychosis: the phase 2/3 AVATAR2 trial](https://www.nature.com/articles/s41591-024-03252-8) | - |
-| MIRROR | 2025 | EMNLP | Multimodal cognitive reframing under resistance. | [MIRROR: Multimodal Cognitive Reframing Therapy for Rolling with Resistance](https://aclanthology.org/2025.emnlp-main.751/) | - |
-| Voice-Enabled VP System | 2025 | arXiv | Voice-based virtual patient for standardized clinical assessment. | [A Voice-Enabled Virtual Patient System for Interactive Training in Standardized Clinical Assessment](https://arxiv.org/abs/2511.00709) | - |
-| M2CoSC | 2025 | NAACL | Multimodal cognitive reframing via psychotherapeutic reasoning. | [Multimodal Cognitive Reframing Therapy via Multi-hop Psychotherapeutic Reasoning](https://aclanthology.org/2025.naacl-long.250/) | - |
-| Psychiatric Virtual SP System | 2026 | BMC Psychiatry | Virtual standardized psychiatric patient system. | [Development and preliminary evaluation of a virtual standardized patient system for psychiatric interview training](https://link.springer.com/article/10.1186/s12888-026-07896-3) | - |
-
-**Beyond Healthcare: General Role-Playing**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| NarrativePlay | 2024 | EACL | Interactive narrative understanding and role-play. | [NarrativePlay: Interactive Narrative Understanding](https://aclanthology.org/2024.eacl-demo.10/) | - |
-| MMRole | 2025 | ICLR | Framework for multimodal role-playing agents. | [MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents](https://proceedings.iclr.cc/paper_files/paper/2025/hash/a5c7206fd66e8314bb21a04492359353-Abstract-Conference.html) | [Code](https://github.com/YanqiDai/MMRole) |
-| Video2Roleplay | 2025 | EMNLP | Video-guided role-playing dataset and framework. | [Video2Roleplay: A Multimodal Dataset and Framework for Video-Guided Role-playing Agents](https://aclanthology.org/2025.emnlp-main.1209/) | - |
-| OmniCharacter | 2025 | ACL | Speech-language personality interaction for immersive role-play. | [OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction](https://aclanthology.org/2025.acl-long.1276/) | [Code](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/OmniCharacter) |
-| GenECA | 2025 | INTERSPEECH | Real-time adaptive embodied conversational agents. | [GenECA: A General-Purpose Framework for Real-Time Adaptive Multimodal Embodied Conversational Agents](https://www.isca-archive.org/interspeech_2025/patapati25_interspeech.html) | - |
-| UniCharacter | 2026 | arXiv | Customized multimodal role-play. | [Towards Customized Multimodal Role-Play](https://arxiv.org/abs/2605.08129) | - |
-| Social VR ECA | 2026 | CHI | Embodied conversational agent for social VR language practice. | [LLM-based Embodied Conversational Agent for Reducing Foreign Language Speaking Anxiety in Social VR](https://doi.org/10.1145/3772318.3791068) | - |
-
-## 2. Dataset, Benchmark, and Evaluation
-
-### 2.1 Dataset
-
-**Narrative-based Role Extraction**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| RoleLLM | 2024 | ACL | Role profiles and role-conditioned instruction data. | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://aclanthology.org/2024.findings-acl.878/) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
-| CharacterEval | 2024 | ACL | Chinese character attributes and dialogue evaluation data. | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://aclanthology.org/2024.acl-long.638/) | [Code](https://github.com/morecry/CharacterEval) |
-| CoSER | 2025 | ICML | Established-role persona simulation dataset and models. | [CoSER: Coordinating LLM-Based Persona Simulation of Established Roles](https://proceedings.mlr.press/v267/wang25dk.html) | [Code](https://github.com/Neph0s/CoSER) |
-| TwinVoice | 2026 | ACL | Digital-twin persona simulation benchmark. | [TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation](https://aclanthology.org/2026.findings-acl.981/) | - |
-| RMTBench | 2025 | EMNLP | Multi-turn user-centric role-playing benchmark. | [RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing](https://aclanthology.org/2025.findings-emnlp.730/) | - |
-| SocialBench | 2024 | ACL | Social-context role-playing evaluation data. | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://aclanthology.org/2024.findings-acl.125/) | [Code](https://github.com/X-PLUG/SocialBench) |
-
-**Professional-case Transformation**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| AI Hospital / MVME | 2025 | COLING | Medical records transformed into multi-agent diagnosis cases. | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
-| PatientSim | 2025 | NeurIPS | MIMIC-grounded patient profiles for history taking. | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://papers.neurips.cc/paper_files/paper/2025/hash/24945e3bdc7b3f4b2e64b9979a16f38e-Abstract-Datasets_and_Benchmarks_Track.html) | - |
-| GPT-SP | 2024 | JMIR Medical Education | Structured history-taking case with simulated-patient Q&A. | [A Generative Pretrained Transformer (GPT)-Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://mededu.jmir.org/2024/1/e53961) | - |
-| SP+Feedback | 2024 | JMIR Medical Education | Simulated-patient dialogues with automated feedback. | [A Language Model-Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://mededu.jmir.org/2024/1/e59213) | - |
-| Structured-Feedback SP | 2024 | BMC Medical Education | Patient simulation with structured feedback for students. | [Large Language Models Improve Clinical Decision Making of Medical Students Through Patient Simulation and Structured Feedback: A Randomized Controlled Trial](https://link.springer.com/article/10.1186/s12909-024-06399-7) | - |
-| CommSkills-SP | 2025 | JMIR Medical Education | Patient simulation for communication-skills training. | [Large Language Model-Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://mededu.jmir.org/2025/1/e81271) | - |
-| Multimetric SP | 2025 | JMIR | Multimetric standardized-patient training evaluation. | [Application of Large Language Models in Medical Training Evaluation---Using ChatGPT as a Standardized Patient: Multimetric Assessment](https://www.jmir.org/2025/1/e59435) | - |
-| CureFun | 2024 | arXiv | Clinical education with LLM-simulated patients. | [Leveraging Large Language Model as Simulated Patients for Clinical Education](https://arxiv.org/abs/2404.13066) | - |
-
-**Psychological-state Structuring**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| PATIENT-psi | 2024 | EMNLP | CBT-style cognitive models for simulated therapy patients. | [PATIENT-ψ: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://aclanthology.org/2024.emnlp-main.711/) | [Code](https://github.com/ruiyiw/patient-psi) |
-| MindVoyager | 2025 | ACL | Client metacognition and openness profiles. | [Can You Share Your Story? Modeling Clients' Metacognition and Openness for LLM Therapist Evaluation](https://aclanthology.org/2025.findings-acl.1332/) | - |
-| PsyCLIENT | 2026 | arXiv | Counseling client profiles and trajectories. | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | - |
-| CARE-Bench | 2026 | AAAI | Expert-guided diverse counseling client profiles. | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://ojs.aaai.org/index.php/AAAI/article/view/41287) | - |
-| PSYCHE | 2025 | arXiv | Multifaceted psychiatric patient profiles. | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | - |
-
-### 2.2 Benchmark
-
-**Persona and Social Fidelity**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| RoleBench | 2024 | ACL | Role-conditioned QA and role-play evaluation. | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://aclanthology.org/2024.findings-acl.878/) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
-| CharacterEval | 2024 | ACL | Multidimensional role-playing evaluation. | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://aclanthology.org/2024.acl-long.638/) | [Code](https://github.com/morecry/CharacterEval) |
-| InCharacter | 2024 | ACL | Psychometric personality-fidelity testing. | [InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews](https://aclanthology.org/2024.acl-long.102/) | [Code](https://github.com/Neph0s/InCharacter) |
-| ECHO | 2024 | arXiv | Indistinguishability and personal echo evaluation. | [How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO](https://arxiv.org/abs/2404.13957) | [Code](https://github.com/CUHK-ARISE/ECHO) |
-| RoleAgentBench | 2024 | NeurIPS | Script-grounded role-agent benchmark. | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5875aca1ef70285a35940afbbce0f9fb-Abstract-Datasets_and_Benchmarks_Track.html) | - |
-| SocialBench | 2024 | ACL | Sociality evaluation across individual and group settings. | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://aclanthology.org/2024.findings-acl.125/) | [Code](https://github.com/X-PLUG/SocialBench) |
-
-**Clinical Workflows**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| AI Hospital / MVME | 2025 | COLING | Symptom, examination, and diagnosis workflow benchmark. | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
-| PatientSim | 2025 | NeurIPS | Doctor-patient interaction consistency benchmark. | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://papers.neurips.cc/paper_files/paper/2025/hash/24945e3bdc7b3f4b2e64b9979a16f38e-Abstract-Datasets_and_Benchmarks_Track.html) | - |
-| CureFun | 2024 | arXiv | Checklist and automated scoring for clinical education. | [Leveraging Large Language Model as Simulated Patients for Clinical Education](https://arxiv.org/abs/2404.13066) | - |
-| GPT-SP | 2024 | JMIR Medical Education | History-taking plausibility and usability evaluation. | [A Generative Pretrained Transformer (GPT)-Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://mededu.jmir.org/2024/1/e53961) | - |
-| SP+Feedback | 2024 | JMIR Medical Education | Feedback quality and checklist agreement benchmark. | [A Language Model-Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://mededu.jmir.org/2024/1/e59213) | - |
-| CommSkills-SP | 2025 | JMIR Medical Education | Communication-skills usability and physician-rating benchmark. | [Large Language Model-Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://mededu.jmir.org/2025/1/e81271) | - |
-
-**Psychological Trajectory**
-
-| :wrench: Method | :calendar: Year | :classical_building: Venue / Source | :memo: Description | :page_facing_up: Paper | :computer: Code |
-|---|---:|---|---|---|---|
-| ClientCAST | 2024 | arXiv | Client-centered assessment of LLM therapists. | [Towards a Client-Centered Assessment of LLM Therapists by Client Simulation](https://arxiv.org/abs/2406.12266) | [Code](https://github.com/wangjs9/ClientCAST) |
-| Interactive Agents | 2024 | arXiv | Full counselor-client session simulation. | [Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions](https://arxiv.org/abs/2408.15787) | [Code](https://github.com/qiuhuachuan/interactive-agents) |
-| PATIENT-psi | 2024 | EMNLP | Cognitive-model recovery through interaction. | [PATIENT-ψ: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://aclanthology.org/2024.emnlp-main.711/) | [Code](https://github.com/ruiyiw/patient-psi) |
-| MindVoyager | 2025 | ACL | Hidden-belief discovery under openness controls. | [Can You Share Your Story? Modeling Clients' Metacognition and Openness for LLM Therapist Evaluation](https://aclanthology.org/2025.findings-acl.1332/) | - |
-| PSYCHE | 2025 | arXiv | Psychiatric profile recovery and expert review. | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | - |
-| PsyCLIENT | 2026 | arXiv | Authenticity and confusion-rate evaluation. | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | - |
-| CARE-Bench | 2026 | AAAI | Counseling quality and alliance-oriented evaluation. | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://ojs.aaai.org/index.php/AAAI/article/view/41287) | - |
-
-### 2.3 Evaluation Metrics
-
-- Reference-based evaluation: information recovery, symptom or attribute matching, checklist completion, profile recovery.
-- Quality rating with scales and rubrics: naturalness, coherence, persona fidelity, clinical realism, therapeutic alliance, usability.
-- Preference and indistinguishability testing: pairwise preference, human-likeness, role believability, simulated-vs-human discrimination.
-
-## 3. Applications
-
-- Educational applications: clinical interviewing, communication training, counseling practice, legal interviewing, negotiation, and service-oriented professional training.
-- Synthetic data construction: controllable dialogue generation, rare scenario expansion, privacy-preserving counseling or clinical interaction data, and simulator-based model improvement.
-
-## 4. Challenges and Future Directions
-
-- Client simulation as evaluation: moving from static QA to interactive, scenario-based model assessment.
-- Longitudinal state tracking: preserving memory, motivation, symptoms, trust, and emotional state across sessions.
-- Calibrated non-cooperation: modeling vague disclosure, resistance, concealment, and partial information without arbitrary obstruction.
-- Safety and ethics: governing vulnerable states, clinical risk scenarios, release boundaries, and downstream use.
-
-## License
-
-No repository-wide license has been added yet because the directory includes ACM template files and unpublished manuscript text. Add an explicit license after confirming publication and release policy.
+Please open an issue or pull request for a correction or newly released official code repository. Include the paper title, authoritative paper URL, code URL, and the corresponding manuscript table.
