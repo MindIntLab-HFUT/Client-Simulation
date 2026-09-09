@@ -232,6 +232,6 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | PsyCLIENT | 2026 | arXiv | PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling [📝 Paper](https://arxiv.org/abs/2601.07312 "Paper") |
 
 
-## 💡 欢迎为 A Survey of Client Simulation in Healthcare and Beyond 贡献 💡
+## 💡 Welcome Contributions to A Survey of Client Simulation in Healthcare and Beyond 💡
 
-如果你发现缺失的工作或有建议，欢迎发起 Issue 或通过 **[xxx@mail.huft.edu.cn](mailto:xxx@mail.huft.edu.cn)** 联系我们。我们会及时更新仓库。
+If you find missing work or have suggestions, feel free to open an issue or contact us at **[xxx@mail.huft.edu.cn](mailto:xxx@mail.huft.edu.cn)**. We will update the repository promptly.
