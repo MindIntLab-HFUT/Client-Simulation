@@ -4,49 +4,8 @@
 
 Curated resources for **A Survey of Client Simulation in Healthcare and Beyond**.
 
-- Paper: coming soon
+![Taxonomy of methodologies of client simulation](paper.png)
 
-```mermaid
-flowchart TB
-  CS[Client Simulation]
-
-  CS --> MT[Methodological Taxonomy]
-  CS --> AD[Application Domains]
-  CS --> RE[Resources and Evaluation]
-
-  MT --> TR[Traditional-based]
-  MT --> SA[Single-Agent Textual LLM]
-  MT --> MA[Multi-Agent Textual LLM]
-  MT --> MM[Multimodal]
-
-  TR --> TRM[Human SP/SC<br/>Scenario Protocol<br/>Manikin/HFS<br/>Virtual Patient<br/>Rule-based Dialogue]
-  SA --> SAM[Profile/Scenario Conditioning<br/>Principle/State Guidance<br/>Stage/Reasoning Control<br/>Retrieval/Memory Augmentation<br/>Model Adaptation/Alignment]
-  MA --> MAM[State/Persona Modeling<br/>Memory/Reasoning Architecture<br/>Role/Workflow Orchestration<br/>Simulation/Evaluation Environment<br/>Experience-Based Optimization]
-  MM --> MMM[Scripted Multimodal Enactment<br/>Modular Perception-Action Generation<br/>Affect/State-Coupled Behavior<br/>Evidence-Grounded Construction<br/>Unified Cross-Modal Role Modeling]
-
-  AD --> PH[Physical Healthcare]
-  AD --> MH[Mental Health]
-  AD --> BH[Beyond Healthcare]
-
-  RE --> DS[Datasets]
-  RE --> BM[Benchmarks]
-  RE --> EV[Evaluation Protocols and Metrics]
-
-  classDef root fill:#1f4e79,color:#fff,stroke:#163a5c,stroke-width:2px;
-  classDef axis fill:#d9eaf7,stroke:#4f81bd,stroke-width:1.5px;
-  classDef family fill:#eaf3e3,stroke:#70ad47;
-  classDef domain fill:#fff2cc,stroke:#bf9000;
-  classDef resource fill:#f4e1f5,stroke:#a64ca6;
-  class CS root;
-  class MT,AD,RE axis;
-  class TR,SA,MA,MM,TRM,SAM,MAM,MMM family;
-  class PH,MH,BH domain;
-  class DS,BM,EV resource;
-```
-
-## Scope and verification
-
-This index mirrors the active rows in the manuscript's five summary tables. Commented-out table rows and background-only citations are intentionally excluded. Years follow the manuscript tables (which use the publication year for venue papers and the table-assigned year for preprints); links point to DOI records, official proceedings, PubMed, publisher pages, or arXiv. A code link is included only when an author-associated repository could be verified from the paper, its official page, or the repository itself. `—` means that no verified public code repository was found.
 
 Last table-to-paper and code-link audit: **2026-09-05**.
 
@@ -194,33 +153,33 @@ Last table-to-paper and code-link audit: **2026-09-05**.
 
 ## 5. Datasets, benchmarks, and evaluation protocols
 
-| Resource | Year | Venue / Source | Size | Benchmark unit / data form | Evaluation protocol / metrics | Paper | Code |
-|---|---:|---|---|---|---|---|---|
-| RoleBench | 2023 | ACL | 100 roles; 168K samples | Role profiles + QA | Reference matching; judge win rate | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://doi.org/10.18653/v1/2024.findings-acl.878) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
-| CharacterEval | 2024 | ACL | 77 characters; 11K examples | Chinese role dialogues | 13-dim scoring; CharacterRM | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://doi.org/10.18653/v1/2024.acl-long.638) | [Code](https://github.com/morecry/CharacterEval) |
-| InCharacter | 2024 | ACL | 32 characters; 14 scales | Profiles + interviews | Psychometric scoring | [InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews](https://doi.org/10.18653/v1/2024.acl-long.102) | [Code](https://github.com/Neph0s/InCharacter) |
-| ECHO | 2024 | arXiv | 10 persons; 800+ responses | Personal questionnaires | Indistinguishability test | [How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO](https://arxiv.org/abs/2404.13957) | [Code](https://github.com/CUHK-ARISE/ECHO) |
-| RoleAgentBench | 2024 | NeurIPS | 128 roles; 25 scripts | Script-grounded roles | Accuracy; win rate; recall | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://doi.org/10.52202/079017-1563) | — |
-| SocialBench | 2024 | ACL | 500 roles; 6K+ prompts | Social-context QA | Accuracy; keyword coverage | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://doi.org/10.18653/v1/2024.findings-acl.125) | [Code](https://github.com/X-PLUG/SocialBench) |
-| GPT-SP | 2024 | JMIR Medical Education | 1 case; 826 QAPs | History-taking case | Plausibility; usability | [A Generative Pretrained Transformer (GPT)–Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://doi.org/10.2196/53961) | — |
-| SP+Feedback | 2024 | JMIR Medical Education | 106 dialogues; 1.9K QAPs | Dialogues + feedback | Checklist; agreement | [A Language Model–Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://doi.org/10.2196/59213) | — |
-| Structured-Feedback SP | 2024 | BMC Medical Education | 21 students; 4 sessions | SP training sessions | CRI-HTI; ICC; ANOVA | [Large language models improve clinical decision making of medical students through patient simulation and structured feedback: a randomized controlled trial](https://doi.org/10.1186/s12909-024-06399-7) | — |
-| CureFun | 2024 | arXiv | 8 cases; 80 dialogues | SP scripts + dialogues | Checklist; GPT-4 Elo | [Leveraging Large Language Model as Simulated Patients for Clinical Education](https://arxiv.org/abs/2404.13066) | — |
-| ClientCAST | 2024 | arXiv | 300 sessions; 61 labels | Counseling profiles | Alliance; outcome scales | [Towards a Client-Centered Assessment of LLM Therapists by Client Simulation](https://arxiv.org/abs/2406.12266) | [Code](https://github.com/wangjs9/ClientCAST) |
-| Interactive Agents | 2024 | arXiv | 1K dialogues; 13 turns avg. | Full counseling sessions | WAI-O-S; arena Elo | [Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions](https://arxiv.org/abs/2408.15787) | [Code](https://github.com/qiuhuachuan/interactive-agents) |
-| PATIENT-ψ | 2024 | EMNLP | 106 CBT models | CBT patient models | Cognitive-model recovery | [PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://doi.org/10.18653/v1/2024.emnlp-main.711) | [Code](https://github.com/ruiyiw/patient-psi) |
-| CoSER | 2025 | ICML | 18K characters; 30K dialogues | Literary role dialogues | Acting/judge evaluation | [CoSER: Coordinating LLM-Based Persona Simulation of Established Roles](https://proceedings.mlr.press/v267/wang25dk.html) | [Code](https://github.com/Neph0s/CoSER) |
-| TwinVoice | 2025 | ACL | 4.6K personas; 5.7K instances | Persona instances | Accuracy; LLM judge | [TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation](https://arxiv.org/abs/2510.25536) | — |
-| RMTBench | 2025 | EMNLP | 80 roles; 8K+ rounds | Multi-turn role play | LLM-based scoring | [RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing](https://arxiv.org/abs/2507.20352) | — |
-| AI Hospital/MVME | 2025 | COLING | 506 cases | Diagnostic cases | Symptom/exam/diagnosis scores | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
-| PatientSim | 2025 | NeurIPS | 170 profiles; 37 persona combos | MIMIC patient profiles | Accuracy; consistency | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://arxiv.org/abs/2505.17818) | [Code](https://github.com/dek924/PatientSim) |
-| CommSkills-SP | 2025 | JMIR Medical Education | 5 students; 4 raters | Communication vignettes | SUS; physician ratings | [Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://doi.org/10.2196/81271) | — |
-| Multimetric SP | 2025 | JMIR | 300 main; 60 transfer runs | SP consultation runs | Multimetric ratings | [Application of Large Language Models in Medical Training Evaluation—Using ChatGPT as a Standardized Patient: Multimetric Assessment](https://doi.org/10.2196/59435) | — |
-| CARE-Bench | 2025 | AAAI | 500 profiles | Counseling profiles | WAI; BLRI; CCS-R | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://arxiv.org/abs/2511.09407) | — |
-| ROLETHINK | 2025 | EMNLP | 405 gold points; 22 characters | Hidden-thought cases | Auto metrics; human rating | [Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents](https://arxiv.org/abs/2503.08193) | [Code](https://github.com/airaer1998/RPA_Thought) |
-| MindVoyager | 2025 | ACL | 100 personas | Cognitive diagrams | CDER; IDSS; A/B test | [Can You Share Your Story? Modeling Clients’ Metacognition and Openness for LLM Therapist Evaluation](https://doi.org/10.18653/v1/2025.findings-acl.1332) | — |
-| PSYCHE | 2025 | arXiv | 10 raters | Psychiatric MFC profiles | Profile recovery; expert review | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | — |
-| PsyCLIENT | 2026 | arXiv | 120 profiles; 324 trajectories | Client profiles + trajectories | Authenticity; confusion rate | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | — |
+| Resource | Year | Venue / Source | Paper | Code |
+|---|---:|---|---|---|
+| RoleBench | 2023 | ACL | [RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models](https://doi.org/10.18653/v1/2024.findings-acl.878) | [Code](https://github.com/InteractiveNLP-Team/RoleLLM-public) |
+| CharacterEval | 2024 | ACL | [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://doi.org/10.18653/v1/2024.acl-long.638) | [Code](https://github.com/morecry/CharacterEval) |
+| InCharacter | 2024 | ACL | [InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews](https://doi.org/10.18653/v1/2024.acl-long.102) | [Code](https://github.com/Neph0s/InCharacter) |
+| ECHO | 2024 | arXiv | [How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO](https://arxiv.org/abs/2404.13957) | [Code](https://github.com/CUHK-ARISE/ECHO) |
+| RoleAgentBench | 2024 | NeurIPS | [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://doi.org/10.52202/079017-1563) | — |
+| SocialBench | 2024 | ACL | [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://doi.org/10.18653/v1/2024.findings-acl.125) | [Code](https://github.com/X-PLUG/SocialBench) |
+| GPT-SP | 2024 | JMIR Medical Education | [A Generative Pretrained Transformer (GPT)–Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study](https://doi.org/10.2196/53961) | — |
+| SP+Feedback | 2024 | JMIR Medical Education | [A Language Model–Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study](https://doi.org/10.2196/59213) | — |
+| Structured-Feedback SP | 2024 | BMC Medical Education | [Large language models improve clinical decision making of medical students through patient simulation and structured feedback: a randomized controlled trial](https://doi.org/10.1186/s12909-024-06399-7) | — |
+| CureFun | 2024 | arXiv | [Leveraging Large Language Model as Simulated Patients for Clinical Education](https://arxiv.org/abs/2404.13066) | — |
+| ClientCAST | 2024 | arXiv | [Towards a Client-Centered Assessment of LLM Therapists by Client Simulation](https://arxiv.org/abs/2406.12266) | [Code](https://github.com/wangjs9/ClientCAST) |
+| Interactive Agents | 2024 | arXiv | [Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions](https://arxiv.org/abs/2408.15787) | [Code](https://github.com/qiuhuachuan/interactive-agents) |
+| PATIENT-ψ | 2024 | EMNLP | [PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals](https://doi.org/10.18653/v1/2024.emnlp-main.711) | [Code](https://github.com/ruiyiw/patient-psi) |
+| CoSER | 2025 | ICML | [CoSER: Coordinating LLM-Based Persona Simulation of Established Roles](https://proceedings.mlr.press/v267/wang25dk.html) | [Code](https://github.com/Neph0s/CoSER) |
+| TwinVoice | 2025 | ACL | [TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation](https://arxiv.org/abs/2510.25536) | — |
+| RMTBench | 2025 | EMNLP | [RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing](https://arxiv.org/abs/2507.20352) | — |
+| AI Hospital/MVME | 2025 | COLING | [AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator](https://aclanthology.org/2025.coling-main.680/) | [Code](https://github.com/LibertFan/AI_Hospital) |
+| PatientSim | 2025 | NeurIPS | [PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](https://arxiv.org/abs/2505.17818) | [Code](https://github.com/dek924/PatientSim) |
+| CommSkills-SP | 2025 | JMIR Medical Education | [Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study](https://doi.org/10.2196/81271) | — |
+| Multimetric SP | 2025 | JMIR | [Application of Large Language Models in Medical Training Evaluation—Using ChatGPT as a Standardized Patient: Multimetric Assessment](https://doi.org/10.2196/59435) | — |
+| CARE-Bench | 2025 | AAAI | [CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling](https://arxiv.org/abs/2511.09407) | — |
+| ROLETHINK | 2025 | EMNLP | [Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents](https://arxiv.org/abs/2503.08193) | [Code](https://github.com/airaer1998/RPA_Thought) |
+| MindVoyager | 2025 | ACL | [Can You Share Your Story? Modeling Clients’ Metacognition and Openness for LLM Therapist Evaluation](https://doi.org/10.18653/v1/2025.findings-acl.1332) | — |
+| PSYCHE | 2025 | arXiv | [PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents](https://arxiv.org/abs/2501.01594) | — |
+| PsyCLIENT | 2026 | arXiv | [PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling](https://arxiv.org/abs/2601.07312) | — |
 
 
 ## Contributing
