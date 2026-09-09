@@ -13,15 +13,30 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## Contents
 
-- [Traditional-based client simulation](#1-traditional-based-client-simulation)
-- [Single-agent textual LLM simulation](#2-single-agent-textual-llm-simulation)
-- [Multi-agent textual LLM simulation](#3-multi-agent-textual-llm-simulation)
-- [Multimodal client simulation](#4-multimodal-client-simulation)
-- [Datasets, benchmarks, and evaluation protocols](#5-datasets-benchmarks-and-evaluation-protocols)
+- [1. Traditional-based client simulation](#1-traditional-based-client-simulation)
+  - [1.1 Physical Healthcare Clients](#11-physical-healthcare-clients)
+  - [1.2 Mental Health Clients](#12-mental-health-clients)
+  - [1.3 Beyond Healthcare: General Role-Playing](#13-beyond-healthcare-general-role-playing)
+- [2. Single-agent textual LLM simulation](#2-single-agent-textual-llm-simulation)
+  - [2.1 Physical Healthcare Clients](#21-physical-healthcare-clients)
+  - [2.2 Mental Health Clients](#22-mental-health-clients)
+  - [2.3 Beyond Healthcare: General Role-Playing](#23-beyond-healthcare-general-role-playing)
+- [3. Multi-agent textual LLM simulation](#3-multi-agent-textual-llm-simulation)
+  - [3.1 Physical Healthcare Clients](#31-physical-healthcare-clients)
+  - [3.2 Mental Health Clients](#32-mental-health-clients)
+  - [3.3 Beyond Healthcare: General Role-Playing](#33-beyond-healthcare-general-role-playing)
+- [4. Multimodal client simulation](#4-multimodal-client-simulation)
+  - [4.1 Physical Healthcare Clients](#41-physical-healthcare-clients)
+  - [4.2 Mental Health Clients](#42-mental-health-clients)
+  - [4.3 Beyond Healthcare: General Role-Playing](#43-beyond-healthcare-general-role-playing)
+- [5. Datasets, benchmarks, and evaluation protocols](#5-datasets-benchmarks-and-evaluation-protocols)
+  - [5.1 Persona and Social Fidelity](#51-persona-and-social-fidelity)
+  - [5.2 Clinical Workflows](#52-clinical-workflows)
+  - [5.3 Psychological Trajectory](#53-psychological-trajectory)
 
 ## 1. Traditional-based client simulation
 
-**Physical Healthcare Clients**
+### 1.1 Physical Healthcare Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -37,10 +52,7 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | AMEE SP Guide | 2009 | Medical Teacher | The use of simulated patients in medical education: AMEE Guide No 42 [📝 Paper](https://doi.org/10.1080/01421590903002821 "Paper") |
 | Procedural Skill Training | 2015 | BMC Medical Education | The benefit of repetitive skills training and frequency of expert feedback in the early acquisition of procedural skills [📝 Paper](https://doi.org/10.1186/s12909-015-0286-5 "Paper") |
 
-
-
-
-**Mental Health Clients**
+### 1.2 Mental Health Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -56,10 +68,7 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | Psychiatry SP Evaluation | 2018 | BMC Medical Education | Standardized patients in psychiatry – the best way to learn clinical skills? [📝 Paper](https://link.springer.com/article/10.1186/s12909-018-1184-4 "Paper") |
 | Psychiatric Communication Training | 2020 | Frontiers in Psychiatry | Single-Day Simulation-Based Training Improves Communication and Psychiatric Skills of Medical Students [📝 Paper](https://doi.org/10.3389/fpsyt.2020.00221 "Paper") |
 
-
-
-
-**Beyond Healthcare: General Role-Playing**
+### 1.3 Beyond Healthcare: General Role-Playing
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -76,7 +85,7 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## 2. Single-agent textual LLM simulation
 
-**Physical Healthcare Clients**
+### 2.1 Physical Healthcare Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -88,7 +97,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | CommSkills-SP | 2025 | JMIR Medical Education | Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study [📝 Paper](https://doi.org/10.2196/81271 "Paper") |
 | Patient-Zero | 2026 | arXiv | Patient-Zero: Scaling Synthetic Patient Agents to Real-World Distributions without Real Patient Data [📝 Paper](https://arxiv.org/abs/2509.11078 "Paper") |
 | Multi-Stage Role-Play | 2026 | ArXiv | Multi-Stage Patient Role-Playing Framework for Realistic Clinical Interactions [📝 Paper](https://arxiv.org/abs/2601.06373 "Paper") |
-**Mental Health Clients**
+
+### 2.2 Mental Health Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -97,7 +107,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | Client101 | 2025 | JMIR Medical Education | Leveraging Large Language Models for Simulated Psychotherapy Client Interactions: Development and Usability Study of Client101 [📝 Paper](https://doi.org/10.2196/68056 "Paper") |
 | TalkDep | 2025 | CIKM | TalkDep: Clinically Grounded LLM Personas for Conversation-Centric Depression Screening [📝 Paper](https://arxiv.org/abs/2508.04248 "Paper") |
 | Eeyore | 2025 | Findings of the Association for Computational Linguistics: ACL 2025 | Eeyore: Realistic Depression Simulation via Expert-in-the-Loop Supervised and Preference Optimization [📝 Paper](https://doi.org/10.18653/v1/2025.findings-acl.707 "Paper") |
-**Beyond Healthcare: General Role-Playing**
+
+### 2.3 Beyond Healthcare: General Role-Playing
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -114,7 +125,7 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## 3. Multi-agent textual LLM simulation
 
-**Physical Healthcare Clients**
+### 3.1 Physical Healthcare Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -127,7 +138,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | AI Hospital | 2025 | COLING | AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator [📝 Paper](https://aclanthology.org/2025.coling-main.680/ "Paper") [💻 Code](https://github.com/LibertFan/AI_Hospital "Code") |
 | AutoMedic | 2025 | arXiv | AutoMedic: An Automated Evaluation Framework for Clinical Conversational Agents with Medical Dataset Grounding [📝 Paper](https://arxiv.org/abs/2512.10195 "Paper") |
 | DynamiCare | 2025 | arXiv | DynamiCare: A Dynamic Multi-Agent Framework for Interactive and Open-Ended Medical Decision-Making [📝 Paper](https://arxiv.org/abs/2507.02616 "Paper") |
-**Mental Health Clients**
+
+### 3.2 Mental Health Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -138,7 +150,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | DSM5AgentFlow | 2025 | CIKM | Trustworthy AI Psychotherapy: Multi-Agent LLM Workflow for Counseling and Explainable Mental Disorder Diagnosis [📝 Paper](https://doi.org/10.1145/3746252.3761164 "Paper") |
 | SynthAgent | 2026 | arXiv | SynthAgent: A Multi-Agent LLM Framework for Realistic Patient Simulation–A Case Study in Obesity with Mental Health Comorbidities [📝 Paper](https://arxiv.org/abs/2602.08254 "Paper") |
 | Honesty-Aware Framework | 2026 | arXiv | Honesty-Aware Multi-Agent Framework for High-Fidelity Synthetic Data Generation in Digital Psychiatric Intake Doctor-Patient Interactions [📝 Paper](https://arxiv.org/abs/2601.09216 "Paper") |
-**Beyond Healthcare: General Role-Playing**
+
+### 3.3 Beyond Healthcare: General Role-Playing
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -159,7 +172,7 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## 4. Multimodal client simulation
 
-**Physical Healthcare Clients**
+### 4.1 Physical Healthcare Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -178,7 +191,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | PAL | 2025 | CSCW | PAL: Designing Conversational Agents as Scalable, Cooperative Patient Simulators for Palliative‑Care Training [📝 Paper](https://doi.org/10.1145/3715070.3749250 "Paper") |
 | SCOT | 2025 | Advances in Simulation | Training communication skills in a multiuser medical virtual reality simulation: a qualitative, observational study [📝 Paper](https://doi.org/10.1186/s41077-025-00386-8 "Paper") |
 | AIMS | 2026 | arXiv | Designing and Evaluating an AI-enhanced Immersive Multidisciplinary Simulation (AIMS) for Interprofessional Education [📝 Paper](https://arxiv.org/abs/2510.08891 "Paper") |
-**Mental Health Clients**
+
+### 4.2 Mental Health Clients
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -188,7 +202,8 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | MetaHuman Patient Simulator | 2025 | arXiv.org | Learning When to Ask: Simulation-Trained Humanoids for Mental-Health Diagnosis [📝 Paper](https://arxiv.org/abs/2512.08952 "Paper") |
 | M2CoSC | 2025 | NAACL | Multimodal Cognitive Reframing Therapy via Multi-hop Psychotherapeutic Reasoning [📝 Paper](https://doi.org/10.18653/v1/2025.naacl-long.250 "Paper") |
 | Psychiatric VSP | 2026 | BMC Psychiatry | Development and preliminary evaluation of a virtual standardized patient system for psychiatric interview training [📝 Paper](https://doi.org/10.1186/s12888-026-07896-3 "Paper") |
-**Beyond Healthcare: General Role-Playing**
+
+### 4.3 Beyond Healthcare: General Role-Playing
 
 | Method | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
@@ -203,6 +218,14 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## 5. Datasets, benchmarks, and evaluation protocols
 
+The manuscript distinguishes three dataset construction approaches: **Narrative-based Role Extraction**, **Professional-case Transformation**, and **Psychological-state Structuring**. Its benchmark taxonomy instead groups resources by their primary evaluation target: **Persona and Social Fidelity**, **Clinical Workflows**, and **Psychological Trajectory**.
+
+The combined resource table below follows the evaluation-target taxonomy. Each resource is listed once; resources not explicitly assigned in the benchmark discussion are grouped according to their role and evaluation focus in the manuscript's summary table.
+
+### 5.1 Persona and Social Fidelity
+
+Resources for character and persona consistency, social behavior, and role-specific knowledge or reasoning.
+
 | Resource | Year | Venue / Source | Description & Links |
 |---|---:|---|---|
 | RoleBench | 2023 | ACL | RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models [📝 Paper](https://doi.org/10.18653/v1/2024.findings-acl.878 "Paper") [💻 Code](https://github.com/InteractiveNLP-Team/RoleLLM-public "Code") |
@@ -211,22 +234,38 @@ Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 | ECHO | 2024 | arXiv | How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO [📝 Paper](https://arxiv.org/abs/2404.13957 "Paper") [💻 Code](https://github.com/CUHK-ARISE/ECHO "Code") |
 | RoleAgentBench | 2024 | NeurIPS | RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts [📝 Paper](https://doi.org/10.52202/079017-1563 "Paper") |
 | SocialBench | 2024 | ACL | SocialBench: Sociality Evaluation of Role-Playing Conversational Agents [📝 Paper](https://doi.org/10.18653/v1/2024.findings-acl.125 "Paper") [💻 Code](https://github.com/X-PLUG/SocialBench "Code") |
+| CoSER | 2025 | ICML | CoSER: Coordinating LLM-Based Persona Simulation of Established Roles [📝 Paper](https://proceedings.mlr.press/v267/wang25dk.html "Paper") [💻 Code](https://github.com/Neph0s/CoSER "Code") |
+| TwinVoice | 2025 | ACL | TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation [📝 Paper](https://arxiv.org/abs/2510.25536 "Paper") |
+| RMTBench | 2025 | EMNLP | RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing [📝 Paper](https://arxiv.org/abs/2507.20352 "Paper") |
+| ROLETHINK | 2025 | EMNLP | Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents [📝 Paper](https://arxiv.org/abs/2503.08193 "Paper") [💻 Code](https://github.com/airaer1998/RPA_Thought "Code") |
+
+
+### 5.2 Clinical Workflows
+
+Resources for history taking, clinical case progression, communication training, and medical assessment.
+
+| Resource | Year | Venue / Source | Description & Links |
+|---|---:|---|---|
 | GPT-SP | 2024 | JMIR Medical Education | A Generative Pretrained Transformer (GPT)–Powered Chatbot as a Simulated Patient to Practice History Taking: Prospective, Mixed Methods Study [📝 Paper](https://doi.org/10.2196/53961 "Paper") |
 | SP+Feedback | 2024 | JMIR Medical Education | A Language Model–Powered Simulated Patient With Automated Feedback for History Taking: Prospective Study [📝 Paper](https://doi.org/10.2196/59213 "Paper") |
 | Structured-Feedback SP | 2024 | BMC Medical Education | Large language models improve clinical decision making of medical students through patient simulation and structured feedback: a randomized controlled trial [📝 Paper](https://doi.org/10.1186/s12909-024-06399-7 "Paper") |
 | CureFun | 2024 | arXiv | Leveraging Large Language Model as Simulated Patients for Clinical Education [📝 Paper](https://arxiv.org/abs/2404.13066 "Paper") |
-| ClientCAST | 2024 | arXiv | Towards a Client-Centered Assessment of LLM Therapists by Client Simulation [📝 Paper](https://arxiv.org/abs/2406.12266 "Paper") [💻 Code](https://github.com/wangjs9/ClientCAST "Code") |
-| Interactive Agents | 2024 | arXiv | Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions [📝 Paper](https://arxiv.org/abs/2408.15787 "Paper") [💻 Code](https://github.com/qiuhuachuan/interactive-agents "Code") |
-| PATIENT-ψ | 2024 | EMNLP | PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals [📝 Paper](https://doi.org/10.18653/v1/2024.emnlp-main.711 "Paper") [💻 Code](https://github.com/ruiyiw/patient-psi "Code") |
-| CoSER | 2025 | ICML | CoSER: Coordinating LLM-Based Persona Simulation of Established Roles [📝 Paper](https://proceedings.mlr.press/v267/wang25dk.html "Paper") [💻 Code](https://github.com/Neph0s/CoSER "Code") |
-| TwinVoice | 2025 | ACL | TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation [📝 Paper](https://arxiv.org/abs/2510.25536 "Paper") |
-| RMTBench | 2025 | EMNLP | RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing [📝 Paper](https://arxiv.org/abs/2507.20352 "Paper") |
 | AI Hospital/MVME | 2025 | COLING | AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator [📝 Paper](https://aclanthology.org/2025.coling-main.680/ "Paper") [💻 Code](https://github.com/LibertFan/AI_Hospital "Code") |
 | PatientSim | 2025 | NeurIPS | PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions [📝 Paper](https://arxiv.org/abs/2505.17818 "Paper") [💻 Code](https://github.com/dek924/PatientSim "Code") |
 | CommSkills-SP | 2025 | JMIR Medical Education | Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study [📝 Paper](https://doi.org/10.2196/81271 "Paper") |
 | Multimetric SP | 2025 | JMIR | Application of Large Language Models in Medical Training Evaluation—Using ChatGPT as a Standardized Patient: Multimetric Assessment [📝 Paper](https://doi.org/10.2196/59435 "Paper") |
+
+
+### 5.3 Psychological Trajectory
+
+Resources for counseling interactions, latent psychological states, and session-level or trajectory-level evaluation.
+
+| Resource | Year | Venue / Source | Description & Links |
+|---|---:|---|---|
+| ClientCAST | 2024 | arXiv | Towards a Client-Centered Assessment of LLM Therapists by Client Simulation [📝 Paper](https://arxiv.org/abs/2406.12266 "Paper") [💻 Code](https://github.com/wangjs9/ClientCAST "Code") |
+| Interactive Agents | 2024 | arXiv | Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions [📝 Paper](https://arxiv.org/abs/2408.15787 "Paper") [💻 Code](https://github.com/qiuhuachuan/interactive-agents "Code") |
+| PATIENT-ψ | 2024 | EMNLP | PATIENT-𝜓: Using Large Language Models to Simulate Patients for Training Mental Health Professionals [📝 Paper](https://doi.org/10.18653/v1/2024.emnlp-main.711 "Paper") [💻 Code](https://github.com/ruiyiw/patient-psi "Code") |
 | CARE-Bench | 2025 | AAAI | CARE-Bench: A Benchmark of Diverse Client Simulations Guided by Expert Principles for Evaluating LLMs in Psychological Counseling [📝 Paper](https://arxiv.org/abs/2511.09407 "Paper") |
-| ROLETHINK | 2025 | EMNLP | Guess What I am Thinking: A Benchmark for Inner Thought Reasoning of Role-Playing Language Agents [📝 Paper](https://arxiv.org/abs/2503.08193 "Paper") [💻 Code](https://github.com/airaer1998/RPA_Thought "Code") |
 | MindVoyager | 2025 | ACL | Can You Share Your Story? Modeling Clients’ Metacognition and Openness for LLM Therapist Evaluation [📝 Paper](https://doi.org/10.18653/v1/2025.findings-acl.1332 "Paper") |
 | PSYCHE | 2025 | arXiv | PSYCHE: A Multi-faceted Patient Simulation Framework for Evaluation of Psychiatric Assessment Conversational Agents [📝 Paper](https://arxiv.org/abs/2501.01594 "Paper") |
 | PsyCLIENT | 2026 | arXiv | PsyCLIENT: Client Simulation via Conversational Trajectory Modeling for Trainee Practice and Model Evaluation in Mental Health Counseling [📝 Paper](https://arxiv.org/abs/2601.07312 "Paper") |
