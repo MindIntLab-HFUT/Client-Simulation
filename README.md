@@ -7,32 +7,32 @@ Curated resources for **A Survey of Client Simulation in Healthcare and Beyond**
 ![Taxonomy of methodologies of client simulation](paper.png)
 
 
-Last table-to-paper and code-link audit: **2026-09-05**.
-
-Links: 📝 Paper · 💻 Code (shown when a repository link is available).
 
 ## Contents
 
-- [1. Traditional-based client simulation](#1-traditional-based-client-simulation)
-  - [1.1 Physical Healthcare Clients](#11-physical-healthcare-clients)
-  - [1.2 Mental Health Clients](#12-mental-health-clients)
-  - [1.3 Beyond Healthcare: General Role-Playing](#13-beyond-healthcare-general-role-playing)
-- [2. Single-agent textual LLM simulation](#2-single-agent-textual-llm-simulation)
-  - [2.1 Physical Healthcare Clients](#21-physical-healthcare-clients)
-  - [2.2 Mental Health Clients](#22-mental-health-clients)
-  - [2.3 Beyond Healthcare: General Role-Playing](#23-beyond-healthcare-general-role-playing)
-- [3. Multi-agent textual LLM simulation](#3-multi-agent-textual-llm-simulation)
-  - [3.1 Physical Healthcare Clients](#31-physical-healthcare-clients)
-  - [3.2 Mental Health Clients](#32-mental-health-clients)
-  - [3.3 Beyond Healthcare: General Role-Playing](#33-beyond-healthcare-general-role-playing)
-- [4. Multimodal client simulation](#4-multimodal-client-simulation)
-  - [4.1 Physical Healthcare Clients](#41-physical-healthcare-clients)
-  - [4.2 Mental Health Clients](#42-mental-health-clients)
-  - [4.3 Beyond Healthcare: General Role-Playing](#43-beyond-healthcare-general-role-playing)
-- [5. Datasets, benchmarks, and evaluation protocols](#5-datasets-benchmarks-and-evaluation-protocols)
-  - [5.1 Persona and Social Fidelity](#51-persona-and-social-fidelity)
-  - [5.2 Clinical Workflows](#52-clinical-workflows)
-  - [5.3 Psychological Trajectory](#53-psychological-trajectory)
+- [A Survey of Client Simulation in Healthcare and Beyond](#a-survey-of-client-simulation-in-healthcare-and-beyond)
+  - [Contents](#contents)
+  - [1. Traditional-based client simulation](#1-traditional-based-client-simulation)
+    - [1.1 Physical Healthcare Clients](#11-physical-healthcare-clients)
+    - [1.2 Mental Health Clients](#12-mental-health-clients)
+    - [1.3 Beyond Healthcare: General Role-Playing](#13-beyond-healthcare-general-role-playing)
+  - [2. Single-agent textual LLM simulation](#2-single-agent-textual-llm-simulation)
+    - [2.1 Physical Healthcare Clients](#21-physical-healthcare-clients)
+    - [2.2 Mental Health Clients](#22-mental-health-clients)
+    - [2.3 Beyond Healthcare: General Role-Playing](#23-beyond-healthcare-general-role-playing)
+  - [3. Multi-agent textual LLM simulation](#3-multi-agent-textual-llm-simulation)
+    - [3.1 Physical Healthcare Clients](#31-physical-healthcare-clients)
+    - [3.2 Mental Health Clients](#32-mental-health-clients)
+    - [3.3 Beyond Healthcare: General Role-Playing](#33-beyond-healthcare-general-role-playing)
+  - [4. Multimodal client simulation](#4-multimodal-client-simulation)
+    - [4.1 Physical Healthcare Clients](#41-physical-healthcare-clients)
+    - [4.2 Mental Health Clients](#42-mental-health-clients)
+    - [4.3 Beyond Healthcare: General Role-Playing](#43-beyond-healthcare-general-role-playing)
+  - [5. Datasets, benchmarks, and evaluation protocols](#5-datasets-benchmarks-and-evaluation-protocols)
+    - [5.1 Persona and Social Fidelity](#51-persona-and-social-fidelity)
+    - [5.2 Clinical Workflows](#52-clinical-workflows)
+    - [5.3 Psychological Trajectory](#53-psychological-trajectory)
+  - [💡 Welcome Contributions to A Survey of Client Simulation in Healthcare and Beyond 💡](#-welcome-contributions-to-a-survey-of-client-simulation-in-healthcare-and-beyond-)
 
 ## 1. Traditional-based client simulation
 
